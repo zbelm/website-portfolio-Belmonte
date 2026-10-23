@@ -1,0 +1,72 @@
+[
+  {
+    "type": "education",
+    "title": "BS Information Technology — Mobile Web & App Development",
+    "org": "National University – MOA",
+    "period": "[REPLACE ME] 20XX – Present",
+    "status": "active",
+    "description": "Main quest. Coursework in web and mobile development, databases, UI/UX and software engineering.",
+    "rewards": ["Mobile dev", "Web dev", "Databases", "Teamwork"],
+    "placeholder": true
+  },
+  {
+    "type": "project",
+    "title": "Roblox Game Developer (Boss Level)",
+    "org": "Personal project",
+    "period": "[REPLACE ME] 20XX – Present",
+    "status": "active",
+    "description": "Designing, scripting and live-updating my own Roblox experience — from core gameplay loops to UI and data saving.",
+    "rewards": ["Luau", "Game design", "Live ops"],
+    "placeholder": true
+  },
+  {
+    "type": "content",
+    "title": "Content Creator & Streamer",
+    "org": "TikTok",
+    "period": "[REPLACE ME] 20XX – Present",
+    "status": "active",
+    "description": "Posting gaming and dev content, editing short-form video and talking with an audience every week.",
+    "rewards": ["Communication", "Video editing", "Consistency"],
+    "placeholder": true
+  },
+  {
+    "type": "training",
+    "title": "Online certifications track",
+    "org": "Anthropic · Google · Meta · freeCodeCamp",
+    "period": "2025 – 2026",
+    "status": "active",
+    "description": "Self-paced courses to go beyond the syllabus — see the Trophy Room for verifiable credentials.",
+    "rewards": ["AI tools", "UX", "Front-end"],
+    "placeholder": true
+  },
+  {
+    "type": "competition",
+    "title": "[REPLACE ME] Hackathon / Game Jam / Contest",
+    "org": "[REPLACE ME] Organizer",
+    "period": "[REPLACE ME] Month YYYY",
+    "status": "complete",
+    "description": "[REPLACE ME] What you built, your role on the team, and the result.",
+    "rewards": ["Rapid prototyping", "Pitching"],
+    "placeholder": true
+  },
+  {
+    "type": "volunteer",
+    "title": "[REPLACE ME] Volunteer / Org role",
+    "org": "[REPLACE ME] School org or community",
+    "period": "[REPLACE ME] Month YYYY",
+    "status": "complete",
+    "description": "[REPLACE ME] e.g. Tech volunteer for a school event — set up registration, livestream, or the event website.",
+    "rewards": ["Leadership", "Event tech"],
+    "placeholder": true
+  },
+  {
+    "type": "education",
+    "title": "[REPLACE ME] Senior High School — Strand",
+    "org": "[REPLACE ME] School name",
+    "period": "[REPLACE ME] 20XX – 20XX",
+    "status": "complete",
+    "description": "[REPLACE ME] Strand (e.g. ICT / STEM) and any honors.",
+    "rewards": ["Foundations"],
+    "placeholder": true
+  }
+]

@@ -1,0 +1,59 @@
+{
+  "_comment": "Set isLive to true (and liveUrl) when you go live. Channels with an empty url are hidden automatically.",
+  "isLive": false,
+  "liveUrl": "",
+  "channelName": "[REPLACE ME] Your creator name",
+  "about": "I make gaming and game-dev content: Roblox builds, dev logs of my own game, and highlights from streams.",
+  "schedule": "[REPLACE ME] e.g. Fri & Sat · 8:00 PM PHT",
+  "whatIStream": [
+    "Roblox gameplay and challenges",
+    "Dev logs: building and updating my own Roblox game",
+    "Behind-the-scenes of school + personal coding projects",
+    "Community playtests where viewers try new features"
+  ],
+  "whyItMatters": [
+    {
+      "title": "Communication",
+      "text": "Explaining what I'm building — live, to strangers — made me better at stand-ups, demos and writing clear docs."
+    },
+    {
+      "title": "Audience feedback",
+      "text": "Comments are a free usability test. I turn viewer feedback into bug fixes and features, the same loop teams run with users."
+    },
+    {
+      "title": "Consistency",
+      "text": "Posting on a schedule taught me to plan, hit deadlines and ship small improvements instead of waiting for perfect."
+    }
+  ],
+  "channels": [
+    { "platform": "TikTok", "icon": "TT", "handle": "@REPLACE_ME", "url": "https://www.tiktok.com/@REPLACE_ME", "placeholder": true },
+    { "platform": "YouTube", "icon": "YT", "handle": "", "url": "" },
+    { "platform": "Twitch", "icon": "TV", "handle": "", "url": "" }
+  ],
+  "videos": [
+    {
+      "type": "tiktok",
+      "title": "[REPLACE ME] Clip title #1",
+      "url": "https://www.tiktok.com/@REPLACE_ME",
+      "thumbnail": "/streams/clip-1.svg",
+      "date": "2026-09",
+      "placeholder": true
+    },
+    {
+      "type": "tiktok",
+      "title": "[REPLACE ME] Clip title #2",
+      "url": "https://www.tiktok.com/@REPLACE_ME",
+      "thumbnail": "/streams/clip-2.svg",
+      "date": "2026-08",
+      "placeholder": true
+    },
+    {
+      "type": "tiktok",
+      "title": "[REPLACE ME] Clip title #3",
+      "url": "https://www.tiktok.com/@REPLACE_ME",
+      "thumbnail": "/streams/clip-3.svg",
+      "date": "2026-07",
+      "placeholder": true
+    }
+  ]
+}

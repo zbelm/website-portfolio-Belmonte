@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Claude Code in Action",
+    "issuer": "Anthropic",
+    "date": "2026-03",
+    "credentialId": "[REPLACE ME]",
+    "verifyUrl": "https://anthropic.skilljar.com/",
+    "badgeImage": "/badges/anthropic.svg",
+    "skills": ["AI-assisted development", "Claude Code", "Prompting"],
+    "placeholder": true
+  },
+  {
+    "name": "Foundations of User Experience (UX) Design",
+    "issuer": "Google",
+    "date": "2025-11",
+    "credentialId": "[REPLACE ME]",
+    "verifyUrl": "https://www.coursera.org/account/accomplishments/verify/REPLACE_ME",
+    "badgeImage": "/badges/google.svg",
+    "skills": ["UX research", "Wireframing", "Design thinking"],
+    "placeholder": true
+  },
+  {
+    "name": "Introduction to Front-End Development",
+    "issuer": "Meta",
+    "date": "2025-08",
+    "credentialId": "[REPLACE ME]",
+    "verifyUrl": "https://www.coursera.org/account/accomplishments/verify/REPLACE_ME",
+    "badgeImage": "/badges/meta.svg",
+    "skills": ["HTML", "CSS", "Bootstrap"],
+    "placeholder": true
+  },
+  {
+    "name": "Responsive Web Design",
+    "issuer": "freeCodeCamp",
+    "date": "2025-05",
+    "credentialId": "[REPLACE ME]",
+    "verifyUrl": "https://www.freecodecamp.org/certification/REPLACE_ME/responsive-web-design",
+    "badgeImage": "/badges/freecodecamp.svg",
+    "skills": ["HTML", "CSS", "Accessibility"],
+    "placeholder": true
+  },
+  {
+    "name": "Introduction to Game Design",
+    "issuer": "Coursera",
+    "date": "2025-02",
+    "credentialId": "[REPLACE ME]",
+    "verifyUrl": "https://www.coursera.org/account/accomplishments/verify/REPLACE_ME",
+    "badgeImage": "/badges/coursera.svg",
+    "skills": ["Game design", "Prototyping", "Playtesting"],
+    "placeholder": true
+  }
+]

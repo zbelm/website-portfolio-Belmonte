@@ -1,0 +1,126 @@
+/* ==========================================================
+   Design tokens
+   Night Arcade = dark (default)   ·   Day World = light
+   Every text/background pair below meets WCAG AA (4.5:1).
+   ========================================================== */
+
+/* Self-hosted pixel fonts (SIL Open Font License), preloaded in index.html */
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/press-start-2p-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'VT323';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/vt323-latin.woff2') format('woff2');
+}
+
+:root {
+  --font-pixel: 'Press Start 2P', ui-monospace, 'Courier New', monospace;
+  --font-body: 'VT323', ui-monospace, 'Courier New', monospace;
+
+  --pb: 4px; /* pixel-border thickness */
+  --hud-h: 60px;
+  --container: 1160px;
+  --rail-space: 32px;
+
+  /* ---------- Night Arcade ---------- */
+  color-scheme: dark;
+  --bg: #0d0221;
+  --bg-2: #160634;
+  --surface: #1d0b42;
+  --surface-2: #2a1259;
+  --text: #f4efff;
+  --muted: #cfc3f5;
+  --purple: #b69cff;
+  --cyan: #3be8ff;
+  --pink: #ff7ccb;
+  --yellow: #ffe45c;
+  --green: #5dff9b;
+  --red: #ff5c7a;
+  --border: #b69cff;
+  --shadow: #000000;
+  --on-accent: #12062b;
+  --btn-yellow: #ffe45c;
+  --btn-cyan: #3be8ff;
+  --btn-pink: #ff7ccb;
+  --btn-purple: #b69cff;
+  --btn-ghost: #2a1259;
+  --chip-bg: #2c1563;
+  --focus: #ffe45c;
+  --scan: rgba(0, 0, 0, 0.16);
+  --vignette: rgba(0, 0, 0, 0.5);
+  --placeholder: #ffb35c;
+
+  /* hero scene */
+  --sky-1: #08011a;
+  --sky-2: #250a52;
+  --sky-3: #5b1a7d;
+  --city-far: #2b1260;
+  --city-near: #170838;
+  --window: #ffe45c;
+  --window-2: #3be8ff;
+  --window-3: #ff7ccb;
+  --window-dim: #4a2a8a;
+  --ground: #1a0838;
+  --ground-top: #ff7ccb;
+  --cloud: #3a1d6e;
+  --orb: #fff3b0;
+  --star: #ffffff;
+}
+
+[data-theme='light'] {
+  /* ---------- Day World ---------- */
+  color-scheme: light;
+  --bg: #eaf6ff;
+  --bg-2: #fff4d6;
+  --surface: #ffffff;
+  --surface-2: #f2eaff;
+  --text: #1b1035;
+  --muted: #463b66;
+  --purple: #6b2fd6;
+  --cyan: #0b6e82;
+  --pink: #b3155d;
+  --yellow: #8a5a00;
+  --green: #17713d;
+  --red: #b4233c;
+  --border: #1b1035;
+  --shadow: #1b1035;
+  --on-accent: #1b1035;
+  --btn-yellow: #ffd84a;
+  --btn-cyan: #86e6f6;
+  --btn-pink: #ffa8d8;
+  --btn-purple: #cdb8ff;
+  --btn-ghost: #ffffff;
+  --chip-bg: #ece3ff;
+  --focus: #b3155d;
+  --scan: rgba(27, 16, 53, 0.05);
+  --vignette: rgba(27, 16, 53, 0.16);
+  --placeholder: #9a4a00;
+
+  --sky-1: #4cb8ff;
+  --sky-2: #93d6ff;
+  --sky-3: #d9f3ff;
+  --city-far: #b4cdf2;
+  --city-near: #7f9fe0;
+  --window: #fff7c2;
+  --window-2: #ffffff;
+  --window-3: #ffd84a;
+  --window-dim: #d5e3f8;
+  --ground: #8a5a2b;
+  --ground-top: #5cc04a;
+  --cloud: #ffffff;
+  --orb: #ffd84a;
+  --star: transparent;
+}
+
+[data-theme='light'] .night-only,
+[data-theme='dark'] .day-only {
+  display: none;
+}
