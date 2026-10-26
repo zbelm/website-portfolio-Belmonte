@@ -12,10 +12,10 @@
       "name": "Languages",
       "icon": "</>",
       "skills": [
-        { "name": "HTML & CSS", "level": 7 },
-        { "name": "JavaScript", "level": 6 },
-        { "name": "Luau (Roblox)", "level": 7 },
-        { "name": "Java", "level": 4 },
+        { "name": "HTML & CSS", "level": 4 },
+        { "name": "JavaScript", "level": 4 },
+        { "name": "Luau (Roblox)", "level": 4 },
+        { "name": "Java", "level": 7 },
         { "name": "SQL", "level": 4 },
         { "name": "Python", "level": 3, "learning": true }
       ]
@@ -25,9 +25,9 @@
       "name": "Frameworks",
       "icon": "{ }",
       "skills": [
-        { "name": "React", "level": 5 },
+        { "name": "React", "level": 4 },
         { "name": "Vite", "level": 5 },
-        { "name": "Bootstrap / Tailwind", "level": 5 },
+        { "name": "Bootstrap / Tailwind", "level": 3 },
         { "name": "Node.js / Express", "level": 3, "learning": true },
         { "name": "React Native", "level": 2, "learning": true }
       ]
@@ -49,9 +49,9 @@
       "name": "Game Dev",
       "icon": "A B",
       "skills": [
-        { "name": "Roblox Studio", "level": 8 },
-        { "name": "Game & level design", "level": 7 },
-        { "name": "Game UI / UX", "level": 6 },
+        { "name": "Roblox Studio", "level": 3 },
+        { "name": "Game & level design", "level": 3 },
+        { "name": "Game UI / UX", "level": 3 },
         { "name": "Blender (3D)", "level": 3, "learning": true }
       ]
     },
@@ -63,7 +63,7 @@
         { "name": "Video editing (CapCut)", "level": 7 },
         { "name": "Short-form content", "level": 7 },
         { "name": "Live streaming / OBS", "level": 5 },
-        { "name": "Pixel art", "level": 4 }
+        { "name": "Pixel art", "level": 1 }
       ]
     }
   ]

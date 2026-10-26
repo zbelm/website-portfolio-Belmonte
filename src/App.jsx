@@ -23,7 +23,6 @@ import Hero from './sections/Hero.jsx';
 import Projects from './sections/Projects.jsx';
 import QuestLog from './sections/QuestLog.jsx';
 import Skills from './sections/Skills.jsx';
-import Streamer from './sections/Streamer.jsx';
 
 // the hidden mini-game is only downloaded when someone unlocks it
 const KonamiGame = lazy(() => import('./components/KonamiGame.jsx'));
@@ -106,7 +105,6 @@ export default function App() {
               <Certifications />
               <Skills />
               <QuestLog />
-              <Streamer />
               <Contact />
             </>
           )}
