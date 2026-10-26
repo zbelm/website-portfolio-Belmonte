@@ -10,8 +10,7 @@ export const LEVELS = [
   { id: 'achievements', world: '1-3', short: 'Certs', name: 'Trophy Room' },
   { id: 'skills', world: '1-4', short: 'Skills', name: 'Skill Tree' },
   { id: 'quests', world: '2-1', short: 'Experience', name: 'Quest Log' },
-  { id: 'stream', world: '2-2', short: 'Streams', name: 'Streamer Mode' },
-  { id: 'contact', world: '2-3', short: 'Contact', name: 'Join My Party' },
+  { id: 'contact', world: '2-2', short: 'Contact', name: 'Join My Party' },
 ];
 
 export const SECTION_IDS = LEVELS.map((l) => l.id);
