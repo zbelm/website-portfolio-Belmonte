@@ -163,9 +163,11 @@ export default function Certifications() {
                 ))}
               </ul>
               <p className="trophy-id">Credential ID: {c.credentialId || '—'}</p>
-              <a className="btn btn-sm btn-yellow" href={c.verifyUrl} target="_blank" rel="noopener noreferrer">
-                ✓ Verify credential<span className="sr-only"> for {c.name} (opens in a new tab)</span>
-              </a>
+              {c.verifyUrl && (
+                <a className="btn btn-sm btn-yellow" href={c.verifyUrl} target="_blank" rel="noopener noreferrer">
+                  ✓ Verify credential<span className="sr-only"> for {c.name} (opens in a new tab)</span>
+                </a>
+              )}
             </li>
           ))}
         </ul>
