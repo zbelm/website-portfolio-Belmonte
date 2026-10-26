@@ -28,7 +28,7 @@ export default function QuestLog() {
           levelId="quests"
           kicker="Experience & education"
           title="Quest Log"
-          sub="School, training, competitions, volunteering and personal projects."
+          sub="School, training and personal projects."
         />
 
         <ol className="quest-list">

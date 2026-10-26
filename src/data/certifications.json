@@ -6,7 +6,10 @@
     "credentialId": "uwkpc7ioh4aq",
     "verifyUrl": "https://verify.skilljar.com/c/uwkpc7ioh4aq",
     "badgeImage": "/badges/anthropic.svg",
-    "skills": ["Subagents", "Claude Code"]
+    "skills": [
+      "Subagents",
+      "Claude Code"
+    ]
   },
   {
     "name": "Responsible AI: Applying AI Principles with Google Cloud",
@@ -15,7 +18,9 @@
     "credentialId": "29090363",
     "verifyUrl": "",
     "badgeImage": "/badges/google.svg",
-    "skills": ["Responsible AI"]
+    "skills": [
+      "Responsible AI"
+    ]
   },
   {
     "name": "Introduction to Large Language Models",
@@ -24,7 +29,9 @@
     "credentialId": "29089932",
     "verifyUrl": "",
     "badgeImage": "/badges/google.svg",
-    "skills": ["Large Language Models (LLM)"]
+    "skills": [
+      "Large Language Models (LLM)"
+    ]
   },
   {
     "name": "Introduction to Generative AI",
@@ -33,7 +40,9 @@
     "credentialId": "29047673",
     "verifyUrl": "",
     "badgeImage": "/badges/google.svg",
-    "skills": ["Generative AI"]
+    "skills": [
+      "Generative AI"
+    ]
   },
   {
     "name": "Introduction to Flutter Course",
@@ -42,7 +51,10 @@
     "credentialId": "10927146",
     "verifyUrl": "",
     "badgeImage": "/badges/simplilearn.svg",
-    "skills": ["Software Development", "Flutter"]
+    "skills": [
+      "Software Development",
+      "Flutter"
+    ]
   },
   {
     "name": "AI Capabilities and Limitations",
@@ -51,7 +63,9 @@
     "credentialId": "f9hx8pi2xio8",
     "verifyUrl": "https://verify.skilljar.com/c/f9hx8pi2xio8",
     "badgeImage": "/badges/anthropic.svg",
-    "skills": ["Artificial Intelligence (AI)"]
+    "skills": [
+      "Artificial Intelligence (AI)"
+    ]
   },
   {
     "name": "Teaching the AI Fluency Framework",
@@ -60,7 +74,9 @@
     "credentialId": "52u4hwrevjwd",
     "verifyUrl": "https://verify.skilljar.com/c/52u4hwrevjwd",
     "badgeImage": "/badges/anthropic.svg",
-    "skills": ["AI Fluency"]
+    "skills": [
+      "AI Fluency"
+    ]
   },
   {
     "name": "AI Fluency for Builders",
@@ -69,7 +85,9 @@
     "credentialId": "jyj37vsnwje8",
     "verifyUrl": "https://verify.skilljar.com/c/jyj37vsnwje8",
     "badgeImage": "/badges/anthropic.svg",
-    "skills": ["AI Fluency"]
+    "skills": [
+      "AI Fluency"
+    ]
   },
   {
     "name": "AI Fluency for Students",
@@ -78,7 +96,9 @@
     "credentialId": "d767pz3jnmjr",
     "verifyUrl": "https://verify.skilljar.com/c/d767pz3jnmjr",
     "badgeImage": "/badges/anthropic.svg",
-    "skills": ["AI Fluency"]
+    "skills": [
+      "AI Fluency"
+    ]
   },
   {
     "name": "Introduction to Model Context Protocol",
@@ -87,7 +107,9 @@
     "credentialId": "4ge87h265782",
     "verifyUrl": "https://verify.skilljar.com/c/4ge87h265782",
     "badgeImage": "/badges/anthropic.svg",
-    "skills": ["Model Context Protocol (MCP)"]
+    "skills": [
+      "Model Context Protocol (MCP)"
+    ]
   },
   {
     "name": "AI Fluency Framework & Foundations",
@@ -96,7 +118,9 @@
     "credentialId": "9p5xsuq9qbgb",
     "verifyUrl": "https://verify.skilljar.com/c/9p5xsuq9qbgb",
     "badgeImage": "/badges/anthropic.svg",
-    "skills": ["AI Fluency"]
+    "skills": [
+      "AI Fluency"
+    ]
   },
   {
     "name": "Claude Code in Action",
@@ -105,7 +129,9 @@
     "credentialId": "vzxxpqj6794f",
     "verifyUrl": "https://verify.skilljar.com/c/vzxxpqj6794f",
     "badgeImage": "/badges/anthropic.svg",
-    "skills": ["Claude Code"]
+    "skills": [
+      "Claude Code"
+    ]
   },
   {
     "name": "Introduction to Claude Cowork",
@@ -114,7 +140,9 @@
     "credentialId": "xrc3vgbr3s6t",
     "verifyUrl": "https://verify.skilljar.com/c/xrc3vgbr3s6t",
     "badgeImage": "/badges/anthropic.svg",
-    "skills": ["Claude Cowork"]
+    "skills": [
+      "Claude Cowork"
+    ]
   },
   {
     "name": "Claude Platform 101",
@@ -123,7 +151,9 @@
     "credentialId": "6mqacs87gk6v",
     "verifyUrl": "https://verify.skilljar.com/c/6mqacs87gk6v",
     "badgeImage": "/badges/anthropic.svg",
-    "skills": ["Claude Skills"]
+    "skills": [
+      "Claude Skills"
+    ]
   },
   {
     "name": "Claude Code 101",
@@ -132,7 +162,9 @@
     "credentialId": "ge6snrscfpkk",
     "verifyUrl": "https://verify.skilljar.com/c/ge6snrscfpkk",
     "badgeImage": "/badges/anthropic.svg",
-    "skills": ["Claude Code"]
+    "skills": [
+      "Claude Code"
+    ]
   },
   {
     "name": "Claude 101",
@@ -141,6 +173,32 @@
     "credentialId": "6qtmx6byq3md",
     "verifyUrl": "https://verify.skilljar.com/c/6qtmx6byq3md",
     "badgeImage": "/badges/anthropic.svg",
-    "skills": ["Claude Skills"]
+    "skills": [
+      "Claude Skills"
+    ]
+  },
+  {
+    "name": "AI Boost Bites: Supercharge Research with Gemini",
+    "issuer": "Google",
+    "date": "2026-10",
+    "credentialId": "29134702",
+    "verifyUrl": "",
+    "badgeImage": "/badges/google.svg",
+    "skills": [
+      "Gemini",
+      "Research"
+    ]
+  },
+  {
+    "name": "National Certificate II in Computer Systems Servicing",
+    "issuer": "TESDA",
+    "date": "2023-06",
+    "expires": "2028-06",
+    "credentialId": "23131202003676",
+    "verifyUrl": "",
+    "badgeImage": "/badges/tesda.svg",
+    "skills": [
+      "Computer Literacy"
+    ]
   }
 ]

@@ -26,9 +26,24 @@
     }
   ],
   "channels": [
-    { "platform": "TikTok", "icon": "TT", "handle": "@REPLACE_ME", "url": "https://www.tiktok.com/@REPLACE_ME", "placeholder": true },
-    { "platform": "YouTube", "icon": "YT", "handle": "", "url": "" },
-    { "platform": "Twitch", "icon": "TV", "handle": "", "url": "" }
+    {
+      "platform": "TikTok",
+      "icon": "TT",
+      "handle": "@kagezaa",
+      "url": "https://www.tiktok.com/@kagezaa"
+    },
+    {
+      "platform": "YouTube",
+      "icon": "YT",
+      "handle": "",
+      "url": ""
+    },
+    {
+      "platform": "Twitch",
+      "icon": "TV",
+      "handle": "",
+      "url": ""
+    }
   ],
   "videos": [
     {
