@@ -1,52 +1,146 @@
 [
   {
+    "name": "Introduction to subagents",
+    "issuer": "Anthropic",
+    "date": "2026-10",
+    "credentialId": "uwkpc7ioh4aq",
+    "verifyUrl": "https://verify.skilljar.com/c/uwkpc7ioh4aq",
+    "badgeImage": "/badges/anthropic.svg",
+    "skills": ["Subagents", "Claude Code"]
+  },
+  {
+    "name": "Responsible AI: Applying AI Principles with Google Cloud",
+    "issuer": "Google",
+    "date": "2026-10",
+    "credentialId": "29090363",
+    "verifyUrl": "",
+    "badgeImage": "/badges/google.svg",
+    "skills": ["Responsible AI"]
+  },
+  {
+    "name": "Introduction to Large Language Models",
+    "issuer": "Google",
+    "date": "2026-10",
+    "credentialId": "29089932",
+    "verifyUrl": "",
+    "badgeImage": "/badges/google.svg",
+    "skills": ["Large Language Models (LLM)"]
+  },
+  {
+    "name": "Introduction to Generative AI",
+    "issuer": "Google",
+    "date": "2026-10",
+    "credentialId": "29047673",
+    "verifyUrl": "",
+    "badgeImage": "/badges/google.svg",
+    "skills": ["Generative AI"]
+  },
+  {
+    "name": "Introduction to Flutter Course",
+    "issuer": "Simplilearn",
+    "date": "2026-10",
+    "credentialId": "10927146",
+    "verifyUrl": "",
+    "badgeImage": "/badges/simplilearn.svg",
+    "skills": ["Software Development", "Flutter"]
+  },
+  {
+    "name": "AI Capabilities and Limitations",
+    "issuer": "Anthropic",
+    "date": "2026-10",
+    "credentialId": "f9hx8pi2xio8",
+    "verifyUrl": "https://verify.skilljar.com/c/f9hx8pi2xio8",
+    "badgeImage": "/badges/anthropic.svg",
+    "skills": ["Artificial Intelligence (AI)"]
+  },
+  {
+    "name": "Teaching the AI Fluency Framework",
+    "issuer": "Anthropic",
+    "date": "2026-10",
+    "credentialId": "52u4hwrevjwd",
+    "verifyUrl": "https://verify.skilljar.com/c/52u4hwrevjwd",
+    "badgeImage": "/badges/anthropic.svg",
+    "skills": ["AI Fluency"]
+  },
+  {
+    "name": "AI Fluency for Builders",
+    "issuer": "Anthropic",
+    "date": "2026-10",
+    "credentialId": "jyj37vsnwje8",
+    "verifyUrl": "https://verify.skilljar.com/c/jyj37vsnwje8",
+    "badgeImage": "/badges/anthropic.svg",
+    "skills": ["AI Fluency"]
+  },
+  {
+    "name": "AI Fluency for Students",
+    "issuer": "Anthropic",
+    "date": "2026-10",
+    "credentialId": "d767pz3jnmjr",
+    "verifyUrl": "https://verify.skilljar.com/c/d767pz3jnmjr",
+    "badgeImage": "/badges/anthropic.svg",
+    "skills": ["AI Fluency"]
+  },
+  {
+    "name": "Introduction to Model Context Protocol",
+    "issuer": "Anthropic",
+    "date": "2026-10",
+    "credentialId": "4ge87h265782",
+    "verifyUrl": "https://verify.skilljar.com/c/4ge87h265782",
+    "badgeImage": "/badges/anthropic.svg",
+    "skills": ["Model Context Protocol (MCP)"]
+  },
+  {
+    "name": "AI Fluency Framework & Foundations",
+    "issuer": "Anthropic",
+    "date": "2026-10",
+    "credentialId": "9p5xsuq9qbgb",
+    "verifyUrl": "https://verify.skilljar.com/c/9p5xsuq9qbgb",
+    "badgeImage": "/badges/anthropic.svg",
+    "skills": ["AI Fluency"]
+  },
+  {
     "name": "Claude Code in Action",
     "issuer": "Anthropic",
-    "date": "2026-03",
-    "credentialId": "[REPLACE ME]",
-    "verifyUrl": "https://anthropic.skilljar.com/",
+    "date": "2026-10",
+    "credentialId": "vzxxpqj6794f",
+    "verifyUrl": "https://verify.skilljar.com/c/vzxxpqj6794f",
     "badgeImage": "/badges/anthropic.svg",
-    "skills": ["AI-assisted development", "Claude Code", "Prompting"],
-    "placeholder": true
+    "skills": ["Claude Code"]
   },
   {
-    "name": "Foundations of User Experience (UX) Design",
-    "issuer": "Google",
-    "date": "2025-11",
-    "credentialId": "[REPLACE ME]",
-    "verifyUrl": "https://www.coursera.org/account/accomplishments/verify/REPLACE_ME",
-    "badgeImage": "/badges/google.svg",
-    "skills": ["UX research", "Wireframing", "Design thinking"],
-    "placeholder": true
+    "name": "Introduction to Claude Cowork",
+    "issuer": "Anthropic",
+    "date": "2026-10",
+    "credentialId": "xrc3vgbr3s6t",
+    "verifyUrl": "https://verify.skilljar.com/c/xrc3vgbr3s6t",
+    "badgeImage": "/badges/anthropic.svg",
+    "skills": ["Claude Cowork"]
   },
   {
-    "name": "Introduction to Front-End Development",
-    "issuer": "Meta",
-    "date": "2025-08",
-    "credentialId": "[REPLACE ME]",
-    "verifyUrl": "https://www.coursera.org/account/accomplishments/verify/REPLACE_ME",
-    "badgeImage": "/badges/meta.svg",
-    "skills": ["HTML", "CSS", "Bootstrap"],
-    "placeholder": true
+    "name": "Claude Platform 101",
+    "issuer": "Anthropic",
+    "date": "2026-10",
+    "credentialId": "6mqacs87gk6v",
+    "verifyUrl": "https://verify.skilljar.com/c/6mqacs87gk6v",
+    "badgeImage": "/badges/anthropic.svg",
+    "skills": ["Claude Skills"]
   },
   {
-    "name": "Responsive Web Design",
-    "issuer": "freeCodeCamp",
-    "date": "2025-05",
-    "credentialId": "[REPLACE ME]",
-    "verifyUrl": "https://www.freecodecamp.org/certification/REPLACE_ME/responsive-web-design",
-    "badgeImage": "/badges/freecodecamp.svg",
-    "skills": ["HTML", "CSS", "Accessibility"],
-    "placeholder": true
+    "name": "Claude Code 101",
+    "issuer": "Anthropic",
+    "date": "2026-10",
+    "credentialId": "ge6snrscfpkk",
+    "verifyUrl": "https://verify.skilljar.com/c/ge6snrscfpkk",
+    "badgeImage": "/badges/anthropic.svg",
+    "skills": ["Claude Code"]
   },
   {
-    "name": "Introduction to Game Design",
-    "issuer": "Coursera",
-    "date": "2025-02",
-    "credentialId": "[REPLACE ME]",
-    "verifyUrl": "https://www.coursera.org/account/accomplishments/verify/REPLACE_ME",
-    "badgeImage": "/badges/coursera.svg",
-    "skills": ["Game design", "Prototyping", "Playtesting"],
-    "placeholder": true
+    "name": "Claude 101",
+    "issuer": "Anthropic",
+    "date": "2026-10",
+    "credentialId": "6qtmx6byq3md",
+    "verifyUrl": "https://verify.skilljar.com/c/6qtmx6byq3md",
+    "badgeImage": "/badges/anthropic.svg",
+    "skills": ["Claude Skills"]
   }
 ]
