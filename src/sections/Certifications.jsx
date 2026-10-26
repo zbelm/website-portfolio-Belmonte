@@ -151,6 +151,11 @@ export default function Certifications() {
                   <h3 className="trophy-name">{c.name}</h3>
                   <p className="trophy-issuer">
                     {c.issuer} · <time dateTime={c.date}>{formatMonth(c.date)}</time>
+                    {c.expires && (
+                      <>
+                        {' '}· Expires <time dateTime={c.expires}>{formatMonth(c.expires)}</time>
+                      </>
+                    )}
                   </p>
                 </div>
               </div>

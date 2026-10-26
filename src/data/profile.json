@@ -4,35 +4,79 @@
   "nickname": "Zach",
   "class": "Full-Stack Game Dev",
   "pitch": "IT student building web apps, mobile apps and Roblox games — looking for an OJT / internship where I can ship real features and learn fast.",
-  "roles": ["App Developer", "Web Developer", "Game Developer", "Content Creator"],
+  "roles": [
+    "App Developer",
+    "Web Developer",
+    "Game Developer",
+    "Content Creator"
+  ],
   "school": "National University – MOA",
   "schoolShort": "NU MOA",
   "course": "BS Information Technology — Mobile Web & App Development (MWA)",
   "courseShort": "BSIT-MWA",
-  "yearLevel": "[REPLACE ME] e.g. 3rd Year",
+  "yearLevel": "4th Year",
   "location": "Metro Manila, Philippines",
   "status": "Open to Internships (OJT)",
-  "availability": "[REPLACE ME] Available for OJT from Month YYYY · Required hours: XXX · Onsite / Hybrid / Remote",
-  "languages": ["English", "Filipino"],
+  "availability": "Available for OJT in November 2026 · Required hours: 800 hrs total · Onsite only",
+  "languages": [
+    "English",
+    "Filipino"
+  ],
   "stats": [
-    { "key": "HP", "name": "Hustle", "value": 90 },
-    { "key": "MP", "name": "Creativity", "value": 85 },
-    { "key": "ATK", "name": "Problem Solving", "value": 75 },
-    { "key": "DEF", "name": "Debugging Patience", "value": 70 },
-    { "key": "SPD", "name": "Learning Speed", "value": 85 },
-    { "key": "CHA", "name": "Communication", "value": 80 }
+    {
+      "key": "HP",
+      "name": "Hustle",
+      "value": 90
+    },
+    {
+      "key": "MP",
+      "name": "Creativity",
+      "value": 85
+    },
+    {
+      "key": "ATK",
+      "name": "Problem Solving",
+      "value": 75
+    },
+    {
+      "key": "DEF",
+      "name": "Debugging Patience",
+      "value": 70
+    },
+    {
+      "key": "SPD",
+      "name": "Learning Speed",
+      "value": 85
+    },
+    {
+      "key": "CHA",
+      "name": "Communication",
+      "value": 80
+    }
   ],
   "statsNote": "Flavor stats for fun — the Skill Tree below has my honest technical levels.",
   "story": [
     "I'm Zach, an IT student at National University – MOA majoring in Mobile Web & App Development. I got into programming the way a lot of devs do: by wanting to build the games I was playing.",
-    "That curiosity turned into a Roblox game I design and script myself, school projects across web and mobile, and a TikTok channel where I share gaming and dev content. Building for real players taught me to test early, listen to feedback and keep shipping.",
-    "[REPLACE ME] One sentence on the team or kind of project you want for your OJT (e.g. \"I'd love to join a product team building mobile or web apps used by real customers.\")"
+    "That curiosity turned into a Roblox game I design and script myself — it's still under development, and I'm still learning Luau as I build it — plus school projects across web and mobile. In my free time I do TikTok streaming and content creation. Building for real people taught me to test early, listen to feedback and keep shipping.",
+    "I want to get the most out of AI. Right now I'm learning two AI models side by side, figuring out how to bring out each one's full potential while researching different tech stacks. I'd love an OJT where I can put that to work on real projects."
   ],
   "specialMoves": [
-    { "name": "Build & Ship", "text": "I take ideas all the way to a playable, usable build." },
-    { "name": "Player-First Design", "text": "Running a game and a channel taught me to design for real users." },
-    { "name": "Fast Learner", "text": "New engine or framework? I learn by building with the docs open." },
-    { "name": "Clear Communicator", "text": "Content creation trained me to explain ideas simply." }
+    {
+      "name": "Build & Ship",
+      "text": "I take ideas all the way to a usable build."
+    },
+    {
+      "name": "Tech-Savvy",
+      "text": "Always curious with technology — I pick up new tools and tech stacks by building with them."
+    },
+    {
+      "name": "Fast Learner",
+      "text": "New engine or framework? I learn by building with the docs open."
+    },
+    {
+      "name": "Clear Communicator",
+      "text": "Content creation trained me to explain ideas simply."
+    }
   ],
   "certGoal": 20
 }
