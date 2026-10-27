@@ -36,7 +36,24 @@ export default function About() {
         <div className="about-grid">
           <article className="char-card panel" data-reveal aria-labelledby="char-name">
             <div className="char-portrait">
-              <Avatar scale={6} interactive={false} />
+              {profile.photo ? (
+                <>
+                  <img
+                    className="char-photo"
+                    src={profile.photo}
+                    alt={profile.photoAlt}
+                    width="220"
+                    height="220"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span className="char-sprite" aria-hidden="true">
+                    <Avatar scale={3} interactive={false} />
+                  </span>
+                </>
+              ) : (
+                <Avatar scale={6} interactive={false} />
+              )}
               <span className="char-selected" aria-hidden="true">
                 P1 ▸ SELECTED
               </span>

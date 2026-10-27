@@ -125,9 +125,9 @@
     "category": "web",
     "year": "2026",
     "status": "Live",
-    "tagline": "Guests book rooms on the web or in an app; staff manage reservations from an admin portal.",
+    "tagline": "Macrotel — guests book rooms on the web or in an app; staff manage reservations from an admin portal.",
     "description": "A reservation system with a guest website and staff portal (Next.js on Vercel), a Flutter mobile app and a Supabase database. Guests search rooms with live availability, book with a 15-minute hold, pay at the hotel or online (GCash, Maya, cards via PayMongo), and manage or cancel bookings. Admins see arrivals and departures, record payments, handle walk-ins and moderate reviews. Booking rules are enforced in the database so the web and mobile apps can't get around them.",
-    "role": "Developer",
+    "role": "Full-stack developer",
     "tech": [
       "Next.js",
       "Supabase",
@@ -141,13 +141,13 @@
       "Unpaid bookings release automatically after 15 minutes",
       "English and Filipino, 30 groups of database tests"
     ],
-    "thumbnail": "/projects/web-app.svg",
-    "thumbnailAlt": "Cover art for the Hotel Reservation System project",
+    "thumbnail": "/projects/hotel.webp",
+    "thumbnailAlt": "Home page of the Macrotel hotel reservation website",
     "screenshots": [],
     "video": null,
     "demoUrl": "https://hotel-reservation-smoky.vercel.app",
     "demoLabel": "Live Demo",
-    "sourceUrl": "https://github.com/zbelm/hotel-reservation"
+    "sourceUrl": ""
   },
   {
     "id": "themes-port",
@@ -156,20 +156,30 @@
     "category": "web",
     "year": "2026",
     "status": "Live",
-    "tagline": "A personal portfolio website with three switchable themes.",
-    "description": "A portfolio website built around three different visual themes that visitors can switch between.",
-    "role": "Developer",
+    "tagline": "A developer portfolio you can switch between three themes: Professional, Minecraft and Roblox.",
+    "description": "My earlier portfolio, rebuilt around a theme engine. Professional is a calm modern UI; Minecraft recreates the game's interface (title screen with a 3D voxel panorama, hotbar, inventory, advancements, chat); Roblox uses a blocky 3D avatar, a baseplate background and trophy badges. Each theme has light and dark modes and its own section layout. All game art is original and generated in code.",
+    "role": "Designer & front-end developer",
     "tech": [
-      "Web"
+      "React",
+      "Vite",
+      "GSAP",
+      "Three.js",
+      "Howler.js",
+      "Web3Forms",
+      "Vercel"
     ],
-    "highlights": [],
+    "highlights": [
+      "Three themes, each with its own layout and light/dark mode",
+      "Pixel textures and Roblox-style thumbnails generated in code, no official assets",
+      "Contact form without a backend (Web3Forms)"
+    ],
     "thumbnail": "/projects/themes-port.webp",
     "thumbnailAlt": "Home page of the Portfolio with 3 Themes website",
     "screenshots": [],
     "video": null,
     "demoUrl": "https://themes-port.vercel.app",
     "demoLabel": "Live Demo",
-    "sourceUrl": ""
+    "sourceUrl": "https://github.com/zbelm/Web-protfolio-themes"
   },
   {
     "id": "kageza-lance",
@@ -178,13 +188,24 @@
     "category": "web",
     "year": "2026",
     "status": "Live",
-    "tagline": "A website for offering freelance services.",
-    "description": "A freelancing website that presents services and work to potential clients.",
-    "role": "Developer",
+    "tagline": "A freelance portfolio and services site: browse website styles and app demos, then request a quote.",
+    "description": "A freelancing site where visitors browse a gallery of website design styles and interactive app demos, read how the work is done, and send an inquiry for a quote. There are no fixed prices — every project is quoted through the contact form. Past clients can leave reviews that appear only after the owner approves them in a small admin area.",
+    "role": "Full-stack developer",
     "tech": [
-      "Web"
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Supabase",
+      "Resend",
+      "Vercel"
     ],
-    "highlights": [],
+    "highlights": [
+      "Full-screen demos of website styles and apps",
+      "Contact form saves inquiries to Supabase and emails the owner via Resend",
+      "Review moderation: reviews go live only after admin approval",
+      "Admin area with Supabase Auth"
+    ],
     "thumbnail": "/projects/kageza-lance.webp",
     "thumbnailAlt": "Home page of the Kageza freelancing website",
     "screenshots": [],
@@ -200,20 +221,28 @@
     "category": "web",
     "year": "2026",
     "status": "Live",
-    "tagline": "A website for a restaurant.",
-    "description": "A restaurant website built to showcase the place and its offerings.",
-    "role": "Developer",
+    "tagline": "Zippies — a fast, modern Italian restaurant website with a menu, reservations and gallery.",
+    "description": "A fully static restaurant site built with Astro: animated hero, filterable menu (vegetarian, vegan, gluten-free), a reservation form with closed-day checks and an add-to-calendar file, events, a gallery lightbox and a contact page. Hours drive a live \"open now\" badge, SEO structured data and the form validation. Content is edited in JSON files, not code.",
+    "role": "Designer & front-end developer",
     "tech": [
-      "Web"
+      "Astro",
+      "JavaScript",
+      "CSS",
+      "Vercel"
     ],
-    "highlights": [],
-    "thumbnail": "/projects/web-app.svg",
-    "thumbnailAlt": "Cover art for the Restaurant Website project",
+    "highlights": [
+      "Filterable menu with dietary tags",
+      "Reservation form with validation and .ics calendar download",
+      "Live \"open now\" badge driven by one hours file",
+      "SEO structured data and sitemap, content editable in JSON"
+    ],
+    "thumbnail": "/projects/restaurant.webp",
+    "thumbnailAlt": "Home page of the Zippies restaurant website",
     "screenshots": [],
     "video": null,
     "demoUrl": "https://restaurant-website-rho-virid.vercel.app",
     "demoLabel": "Live Demo",
-    "sourceUrl": ""
+    "sourceUrl": "https://github.com/zbelm/Restaurant-website"
   },
   {
     "id": "valorant-landing",
@@ -222,20 +251,26 @@
     "category": "web",
     "year": "2026",
     "status": "Live",
-    "tagline": "A game-themed landing page inspired by Valorant.",
-    "description": "A Valorant-inspired landing page website.",
-    "role": "Developer",
+    "tagline": "A Valorant-inspired landing page with agents, maps, ranked and download sections.",
+    "description": "A single-page, game-style landing page inspired by Valorant: a bold hero with trailer and play buttons, then Agents, Maps, Ranked, Download and News sections, in a dark red-and-black design. Built to practise layout, typography and responsive design with Tailwind.",
+    "role": "Front-end developer",
     "tech": [
-      "Web"
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Vercel"
     ],
-    "highlights": [],
-    "thumbnail": "/projects/web-app.svg",
-    "thumbnailAlt": "Cover art for the Valorant Landing Page project",
+    "highlights": [
+      "Hero, agents, maps, ranked, download and news sections",
+      "Responsive dark red-and-black design"
+    ],
+    "thumbnail": "/projects/valorant.webp",
+    "thumbnailAlt": "Valorant-style landing page hero",
     "screenshots": [],
     "video": null,
     "demoUrl": "https://valorant-landing-beige.vercel.app",
     "demoLabel": "Live Demo",
-    "sourceUrl": ""
+    "sourceUrl": "https://github.com/zbelm/valorant-landing"
   },
   {
     "id": "ecommerce-react",
@@ -244,20 +279,28 @@
     "category": "web",
     "year": "2026",
     "status": "Live",
-    "tagline": "An online shop front end built with React.",
-    "description": "An e-commerce website built with React.",
-    "role": "Developer",
+    "tagline": "ShopEasy — a React online shop with search, product pages, a cart and Cash on Delivery checkout.",
+    "description": "An e-commerce front end built with React and React Router. Shoppers browse a product catalog with search, category filter and pagination, open product detail pages, manage a cart, and check out with Cash on Delivery, ending on an order-success page.",
+    "role": "Front-end developer",
     "tech": [
-      "React"
+      "React",
+      "React Router",
+      "Vite",
+      "Vercel"
     ],
-    "highlights": [],
-    "thumbnail": "/projects/web-app.svg",
-    "thumbnailAlt": "Cover art for the E-Commerce Website (React) project",
+    "highlights": [
+      "Search, category filter and pagination",
+      "Product detail pages and shopping cart",
+      "Checkout with an order summary and Cash on Delivery",
+      "Order success and not-found pages"
+    ],
+    "thumbnail": "/projects/ecommerce.webp",
+    "thumbnailAlt": "ShopEasy e-commerce home page",
     "screenshots": [],
     "video": null,
     "demoUrl": "https://e-commerceweb-react.vercel.app",
     "demoLabel": "Live Demo",
-    "sourceUrl": ""
+    "sourceUrl": "https://github.com/zbelm/E-commerceweb-react"
   },
   {
     "id": "student-location",
@@ -266,20 +309,29 @@
     "category": "web",
     "year": "2026",
     "status": "Live",
-    "tagline": "A website for locating students.",
-    "description": "A student location system web app.",
-    "role": "Developer",
+    "tagline": "Campus Compass — register students and pin where they live on an interactive map.",
+    "description": "A web app for keeping a campus directory of where students live. You register a student (name, course and address), the address is looked up with OpenStreetMap geocoding, and the student appears as a pin on a Leaflet map. Records are saved in the browser, can be deleted, and the app has a light/dark mode.",
+    "role": "Front-end developer",
     "tech": [
-      "Web"
+      "React",
+      "Vite",
+      "Leaflet",
+      "Tailwind CSS",
+      "Bootstrap",
+      "OpenStreetMap"
     ],
-    "highlights": [],
-    "thumbnail": "/projects/web-app.svg",
-    "thumbnailAlt": "Cover art for the Student Location System project",
+    "highlights": [
+      "Address search turns into map pins (Nominatim / Photon geocoding)",
+      "Interactive Leaflet map with a pin per student",
+      "Records and theme saved in the browser, light/dark mode"
+    ],
+    "thumbnail": "/projects/student-location.webp",
+    "thumbnailAlt": "Campus Compass student location map page",
     "screenshots": [],
     "video": null,
     "demoUrl": "https://studentlocationsystem-azure.vercel.app",
     "demoLabel": "Live Demo",
-    "sourceUrl": ""
+    "sourceUrl": "https://github.com/zbelm/Student-location-system"
   },
   {
     "id": "activity-portal",
@@ -288,19 +340,25 @@
     "category": "web",
     "year": "2026",
     "status": "Live",
-    "tagline": "A website where you can do activities.",
-    "description": "A React website where visitors can do different activities.",
+    "tagline": "Five interactive labs for practising React state, events, validation and conditional rendering.",
+    "description": "A React portal of small practice activities: a Login form with validation, a Password Strength Checker (Weak / Medium / Strong), an Employee Attendance Checker (On Time / Late), an Electricity Bill Calculator with tiered rates, and a Student Grade Evaluator. Each lab shows its result in a clear result panel.",
     "role": "Developer",
     "tech": [
-      "React"
+      "React",
+      "Vite",
+      "JavaScript",
+      "Vercel"
     ],
-    "highlights": [],
+    "highlights": [
+      "Five labs: login, password strength, attendance, electricity bill, grade evaluation",
+      "Practice with state, events, form validation and conditional rendering"
+    ],
     "thumbnail": "/projects/web-app.svg",
     "thumbnailAlt": "Cover art for the React Activity Portal project",
     "screenshots": [],
     "video": null,
     "demoUrl": "https://react-activity-portal-kappa.vercel.app",
     "demoLabel": "Live Demo",
-    "sourceUrl": ""
+    "sourceUrl": "https://github.com/zbelm/react-activity-portal"
   }
 ]
