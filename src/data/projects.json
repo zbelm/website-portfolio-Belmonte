@@ -53,8 +53,8 @@
       "Three.js hero cube that only loads on capable devices (CSS fallback)",
       "Content-driven: projects, certs, skills and timeline are JSON files"
     ],
-    "thumbnail": "/projects/portfolio.svg",
-    "thumbnailAlt": "Pixel-art cover for the Player One portfolio website",
+    "thumbnail": "/projects/portfolio-shot.webp",
+    "thumbnailAlt": "Player One portfolio boot screen",
     "screenshots": [],
     "video": null,
     "demoUrl": "https://website-portfolio-belmonte.vercel.app",
@@ -163,8 +163,8 @@
       "Web"
     ],
     "highlights": [],
-    "thumbnail": "/projects/web-app.svg",
-    "thumbnailAlt": "Cover art for the Portfolio with 3 Themes project",
+    "thumbnail": "/projects/themes-port.webp",
+    "thumbnailAlt": "Home page of the Portfolio with 3 Themes website",
     "screenshots": [],
     "video": null,
     "demoUrl": "https://themes-port.vercel.app",
@@ -185,8 +185,8 @@
       "Web"
     ],
     "highlights": [],
-    "thumbnail": "/projects/web-app.svg",
-    "thumbnailAlt": "Cover art for the Freelancing Website project",
+    "thumbnail": "/projects/kageza-lance.webp",
+    "thumbnailAlt": "Home page of the Kageza freelancing website",
     "screenshots": [],
     "video": null,
     "demoUrl": "https://kageza-lance.vercel.app",
