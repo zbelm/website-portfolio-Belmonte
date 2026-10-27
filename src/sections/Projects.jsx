@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import projects from '../data/projects.json';
 import { useReveal } from '../hooks/useReveal.js';
 import Modal from '../components/Modal.jsx';
@@ -149,6 +149,7 @@ function ProjectModal({ project, onClose }) {
 /** LEVEL 1-2 — Level Select: filterable project cartridges. Content: src/data/projects.json */
 export default function Projects() {
   const ref = useRef(null);
+  const gridRef = useRef(null);
   const [filter, setFilter] = useState('all');
   const [selected, setSelected] = useState(null);
   useReveal(ref);
@@ -156,6 +157,12 @@ export default function Projects() {
   const list = useMemo(() => {
     const filtered = filter === 'all' ? projects : projects.filter((p) => p.category === filter);
     return [...filtered].sort((a, b) => Number(Boolean(b.boss)) - Number(Boolean(a.boss)));
+  }, [filter]);
+
+  // cards mounted after the first render were never seen by the reveal observer,
+  // so flag them as revealed whenever the filter changes (otherwise they stay invisible)
+  useEffect(() => {
+    gridRef.current?.querySelectorAll('.cart').forEach((c) => c.classList.add('is-in'));
   }, [filter]);
 
   return (
@@ -190,7 +197,7 @@ export default function Projects() {
           {list.length} projects shown
         </p>
 
-        <div className="cart-grid">
+        <div ref={gridRef} className="cart-grid">
           {list.map((p) => (
             <ProjectCard key={p.id} project={p} onOpen={setSelected} />
           ))}
