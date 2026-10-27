@@ -200,5 +200,16 @@
     "skills": [
       "Computer Literacy"
     ]
+  },
+  {
+    "name": "Python",
+    "issuer": "Kaggle",
+    "date": "2026-10",
+    "credentialId": "",
+    "verifyUrl": "https://www.kaggle.com/learn/certification/zacharybelmonte/python",
+    "badgeImage": "/badges/kaggle.svg",
+    "skills": [
+      "Python"
+    ]
   }
 ]
