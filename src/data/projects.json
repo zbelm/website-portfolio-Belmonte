@@ -145,7 +145,7 @@
     "thumbnailAlt": "Cover art for the Hotel Reservation System project",
     "screenshots": [],
     "video": null,
-    "demoUrl": "https://hotel-reservation.vercel.app",
+    "demoUrl": "https://hotel-reservation-smoky.vercel.app",
     "demoLabel": "Live Demo",
     "sourceUrl": "https://github.com/zbelm/hotel-reservation"
   },
@@ -211,7 +211,7 @@
     "thumbnailAlt": "Cover art for the Restaurant Website project",
     "screenshots": [],
     "video": null,
-    "demoUrl": "https://restaurant-website.vercel.app",
+    "demoUrl": "https://restaurant-website-rho-virid.vercel.app",
     "demoLabel": "Live Demo",
     "sourceUrl": ""
   },
@@ -233,7 +233,7 @@
     "thumbnailAlt": "Cover art for the Valorant Landing Page project",
     "screenshots": [],
     "video": null,
-    "demoUrl": "https://valorant-landing.vercel.app",
+    "demoUrl": "https://valorant-landing-beige.vercel.app",
     "demoLabel": "Live Demo",
     "sourceUrl": ""
   },
@@ -277,7 +277,29 @@
     "thumbnailAlt": "Cover art for the Student Location System project",
     "screenshots": [],
     "video": null,
-    "demoUrl": "https://studentlocationsystem.vercel.app",
+    "demoUrl": "https://studentlocationsystem-azure.vercel.app",
+    "demoLabel": "Live Demo",
+    "sourceUrl": ""
+  },
+  {
+    "id": "activity-portal",
+    "placeholder": false,
+    "title": "React Activity Portal",
+    "category": "web",
+    "year": "2026",
+    "status": "Live",
+    "tagline": "An activity portal web app built with React.",
+    "description": "A web app built with React for managing activities.",
+    "role": "Developer",
+    "tech": [
+      "React"
+    ],
+    "highlights": [],
+    "thumbnail": "/projects/web-app.svg",
+    "thumbnailAlt": "Cover art for the React Activity Portal project",
+    "screenshots": [],
+    "video": null,
+    "demoUrl": "https://react-activity-portal-kappa.vercel.app",
     "demoLabel": "Live Demo",
     "sourceUrl": ""
   }
