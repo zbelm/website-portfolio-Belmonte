@@ -288,8 +288,8 @@
     "category": "web",
     "year": "2026",
     "status": "Live",
-    "tagline": "An activity portal web app built with React.",
-    "description": "A web app built with React for managing activities.",
+    "tagline": "A website where you can do activities.",
+    "description": "A React website where visitors can do different activities.",
     "role": "Developer",
     "tech": [
       "React"
