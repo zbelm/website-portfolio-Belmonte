@@ -2,32 +2,29 @@
   {
     "id": "roblox-boss",
     "boss": true,
-    "placeholder": true,
-    "title": "[REPLACE ME] Roblox Game Title",
+    "placeholder": false,
+    "title": "Palaba",
     "category": "game",
-    "year": "2025",
-    "status": "Live on Roblox",
-    "tagline": "My biggest build: a Roblox experience I designed, scripted and keep updating for real players.",
-    "description": "[REPLACE ME] Describe the game in 2–3 sentences: the core loop, who it's for, and what makes it fun. Add real numbers if you have them (visits, favorites, peak concurrent players, update cadence).",
-    "role": "Solo developer — game design, Luau scripting, level design, UI, live updates",
+    "year": "2026",
+    "status": "In Development",
+    "tagline": "A passion project: my own Roblox game, still under development and not yet deployed.",
+    "description": "Palaba is a Roblox game I'm designing and scripting myself as a passion project. It's still in development and hasn't been released yet, so there's nothing to play for now. I'm building it in Roblox Studio with Luau while learning more with every update.",
+    "role": "Solo developer — game design, Luau scripting, level design, UI",
     "tech": [
       "Roblox Studio",
-      "Luau",
-      "DataStores",
-      "RemoteEvents",
-      "Blender"
+      "Luau"
     ],
     "highlights": [
-      "[REPLACE ME] e.g. 10,000+ visits and 300+ favorites",
-      "[REPLACE ME] e.g. Save system with DataStores + server-side validation",
-      "[REPLACE ME] e.g. Weekly updates driven by player feedback from TikTok"
+      "Passion project built solo from scratch",
+      "Currently in development — not yet deployed",
+      "Learning Luau and Roblox Studio systems as I build"
     ],
     "thumbnail": "/projects/roblox-boss.svg",
-    "thumbnailAlt": "Placeholder cover art for my Roblox game",
+    "thumbnailAlt": "Cover art for Palaba, my Roblox game in development",
     "screenshots": [],
     "video": null,
-    "demoUrl": "https://www.roblox.com/",
-    "demoLabel": "Play on Roblox",
+    "demoUrl": "",
+    "demoLabel": "",
     "sourceUrl": ""
   },
   {
