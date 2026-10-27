@@ -2,6 +2,8 @@
   "firstName": "Francis Zachary",
   "lastName": "Belmonte",
   "nickname": "Zach",
+  "photo": "",
+  "photoAlt": "Photo of Francis Zachary Belmonte",
   "class": "Full-Stack Game Dev",
   "pitch": "IT student building web apps, mobile apps and Roblox games — looking for an OJT / internship where I can ship real features and learn fast.",
   "roles": [
