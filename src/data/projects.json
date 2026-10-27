@@ -10,7 +10,13 @@
     "tagline": "My biggest build: a Roblox experience I designed, scripted and keep updating for real players.",
     "description": "[REPLACE ME] Describe the game in 2–3 sentences: the core loop, who it's for, and what makes it fun. Add real numbers if you have them (visits, favorites, peak concurrent players, update cadence).",
     "role": "Solo developer — game design, Luau scripting, level design, UI, live updates",
-    "tech": ["Roblox Studio", "Luau", "DataStores", "RemoteEvents", "Blender"],
+    "tech": [
+      "Roblox Studio",
+      "Luau",
+      "DataStores",
+      "RemoteEvents",
+      "Blender"
+    ],
     "highlights": [
       "[REPLACE ME] e.g. 10,000+ visits and 300+ favorites",
       "[REPLACE ME] e.g. Save system with DataStores + server-side validation",
@@ -34,7 +40,14 @@
     "tagline": "This site — a retro-game portfolio with scroll storytelling, a 3D hero and hidden easter eggs.",
     "description": "A Vite + React single-page portfolio themed as an 8-bit game. Every section is a level, content lives in JSON data files, and heavy effects (Three.js, sound) load only when the device can handle them. Built to stay accessible and fast: keyboard navigation, reduced-motion support and AA contrast in both themes.",
     "role": "Designer & front-end developer",
-    "tech": ["React", "Vite", "GSAP", "Three.js", "Howler.js", "Vercel"],
+    "tech": [
+      "React",
+      "Vite",
+      "GSAP",
+      "Three.js",
+      "Howler.js",
+      "Vercel"
+    ],
     "highlights": [
       "Scroll-driven world map + pixel transitions with GSAP ScrollTrigger",
       "Three.js hero cube that only loads on capable devices (CSS fallback)",
@@ -49,63 +62,223 @@
     "sourceUrl": "https://github.com/zbelm/website-portfolio-Belmonte"
   },
   {
-    "id": "mobile-app",
-    "placeholder": true,
-    "title": "[REPLACE ME] Mobile App Project",
+    "id": "customate",
+    "placeholder": false,
+    "title": "CustoMate — 3D Product Customization App",
     "category": "app",
-    "year": "2025",
-    "status": "School project",
-    "tagline": "[REPLACE ME] One line: what the app does and who it helps.",
-    "description": "[REPLACE ME] What problem it solves, the main screens/features, and what you personally built. Mention anything measurable (users, grade, demo day result).",
-    "role": "[REPLACE ME] e.g. Lead developer — UI, auth and database",
-    "tech": ["Android Studio", "Kotlin", "Firebase"],
-    "highlights": ["[REPLACE ME] Key feature #1", "[REPLACE ME] Key feature #2"],
-    "thumbnail": "/projects/mobile-app.svg",
-    "thumbnailAlt": "Placeholder cover art for a mobile app project",
-    "screenshots": [],
+    "year": "2026",
+    "status": "Capstone project",
+    "tagline": "Design custom-printed products on a live 3D model, then order them — all from your phone.",
+    "description": "A cross-platform mobile app for designing and ordering custom-printed products with a real-time 3D preview. Customers pick a product, drop text and images onto a 3D model (the design wraps onto the mesh instead of floating on top), then check out. A production/QC team fulfils orders through a dedicated staff workflow. Built with React Native (Expo) on a Node/Express + MongoDB API, with a companion web admin dashboard.",
+    "role": "Mobile developer — 3D customizer, e-commerce flow and staff screens",
+    "tech": [
+      "React Native",
+      "Expo",
+      "Three.js",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Socket.IO",
+      "PayMongo"
+    ],
+    "highlights": [
+      "Real-time 3D customizer across 7 products (t-shirt, cap, mug, tote bag, jersey, hand fan, mouse pad) with text, images, move/scale/rotate and undo/redo",
+      "AI lifestyle preview that turns a design into a product photo, plus AI design generation",
+      "Full e-commerce flow: catalog, cart, checkout, order history, GCash / Maya payments via PayMongo",
+      "Production & QC workflow with role-based staff screens and proof-photo review",
+      "Realtime order and chat updates with Socket.IO, OTP sign-up and push notifications",
+      "Known gap: the web admin side of customer chat (inbox and replies) is not built yet"
+    ],
+    "thumbnail": "/projects/customate.webp",
+    "thumbnailAlt": "CustoMate app screens: home, 3D customizer and AI lifestyle preview",
+    "screenshots": [
+      {
+        "src": "/projects/customate-home.webp",
+        "alt": "CustoMate home screen with Quick Access shortcuts"
+      },
+      {
+        "src": "/projects/customate-customizer-colors.webp",
+        "alt": "3D t-shirt customizer with a color picker"
+      },
+      {
+        "src": "/projects/customate-customizer-ai.webp",
+        "alt": "AI design generation panel in the customizer"
+      },
+      {
+        "src": "/projects/customate-lifestyle-preview.webp",
+        "alt": "AI lifestyle preview of a custom green shirt on a model"
+      },
+      {
+        "src": "/projects/customate-order-confirmed.webp",
+        "alt": "Payment successful and order summary screen"
+      }
+    ],
     "video": null,
     "demoUrl": "",
+    "demoLabel": "Download APK",
+    "sourceUrl": ""
+  },
+  {
+    "id": "hotel-reservation",
+    "placeholder": false,
+    "title": "Hotel Reservation System",
+    "category": "web",
+    "year": "2026",
+    "status": "Live",
+    "tagline": "Guests book rooms on the web or in an app; staff manage reservations from an admin portal.",
+    "description": "A reservation system with a guest website and staff portal (Next.js on Vercel), a Flutter mobile app and a Supabase database. Guests search rooms with live availability, book with a 15-minute hold, pay at the hotel or online (GCash, Maya, cards via PayMongo), and manage or cancel bookings. Admins see arrivals and departures, record payments, handle walk-ins and moderate reviews. Booking rules are enforced in the database so the web and mobile apps can't get around them.",
+    "role": "Developer",
+    "tech": [
+      "Next.js",
+      "Supabase",
+      "PostgreSQL",
+      "Flutter",
+      "PayMongo",
+      "Vercel"
+    ],
+    "highlights": [
+      "Two guests can never book the last room — bookings are processed one at a time",
+      "Unpaid bookings release automatically after 15 minutes",
+      "English and Filipino, 30 groups of database tests"
+    ],
+    "thumbnail": "/projects/web-app.svg",
+    "thumbnailAlt": "Cover art for the Hotel Reservation System project",
+    "screenshots": [],
+    "video": null,
+    "demoUrl": "https://hotel-reservation.vercel.app",
+    "demoLabel": "Live Demo",
+    "sourceUrl": "https://github.com/zbelm/hotel-reservation"
+  },
+  {
+    "id": "themes-port",
+    "placeholder": false,
+    "title": "Portfolio with 3 Themes",
+    "category": "web",
+    "year": "2026",
+    "status": "Live",
+    "tagline": "A personal portfolio website with three switchable themes.",
+    "description": "A portfolio website built around three different visual themes that visitors can switch between.",
+    "role": "Developer",
+    "tech": [
+      "Web"
+    ],
+    "highlights": [],
+    "thumbnail": "/projects/web-app.svg",
+    "thumbnailAlt": "Cover art for the Portfolio with 3 Themes project",
+    "screenshots": [],
+    "video": null,
+    "demoUrl": "https://themes-port.vercel.app",
     "demoLabel": "Live Demo",
     "sourceUrl": ""
   },
   {
-    "id": "web-app",
-    "placeholder": true,
-    "title": "[REPLACE ME] Web App Project",
+    "id": "kageza-lance",
+    "placeholder": false,
+    "title": "Freelancing Website",
     "category": "web",
-    "year": "2025",
-    "status": "School project",
-    "tagline": "[REPLACE ME] One line: what the web app does.",
-    "description": "[REPLACE ME] Describe the features, your role and the stack. Link a live demo if you can — recruiters click those first.",
-    "role": "[REPLACE ME] e.g. Full-stack developer",
-    "tech": ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
-    "highlights": ["[REPLACE ME] Key feature #1", "[REPLACE ME] Key feature #2"],
+    "year": "2026",
+    "status": "Live",
+    "tagline": "A website for offering freelance services.",
+    "description": "A freelancing website that presents services and work to potential clients.",
+    "role": "Developer",
+    "tech": [
+      "Web"
+    ],
+    "highlights": [],
     "thumbnail": "/projects/web-app.svg",
-    "thumbnailAlt": "Placeholder cover art for a web app project",
+    "thumbnailAlt": "Cover art for the Freelancing Website project",
     "screenshots": [],
     "video": null,
-    "demoUrl": "",
+    "demoUrl": "https://kageza-lance.vercel.app",
     "demoLabel": "Live Demo",
-    "sourceUrl": "https://github.com/zbelm"
+    "sourceUrl": ""
   },
   {
-    "id": "game-jam",
-    "placeholder": true,
-    "title": "[REPLACE ME] Game Jam / Mini Game",
-    "category": "game",
-    "year": "2025",
-    "status": "Prototype",
-    "tagline": "[REPLACE ME] A small game built under a time limit.",
-    "description": "[REPLACE ME] Theme of the jam, what you built in the time limit, and what you learned.",
-    "role": "[REPLACE ME] e.g. Programmer & level designer",
-    "tech": ["Roblox Studio", "Luau"],
-    "highlights": ["[REPLACE ME] Built in 48 hours", "[REPLACE ME] Placed / feedback received"],
-    "thumbnail": "/projects/game-jam.svg",
-    "thumbnailAlt": "Placeholder cover art for a game jam entry",
+    "id": "restaurant-website",
+    "placeholder": false,
+    "title": "Restaurant Website",
+    "category": "web",
+    "year": "2026",
+    "status": "Live",
+    "tagline": "A website for a restaurant.",
+    "description": "A restaurant website built to showcase the place and its offerings.",
+    "role": "Developer",
+    "tech": [
+      "Web"
+    ],
+    "highlights": [],
+    "thumbnail": "/projects/web-app.svg",
+    "thumbnailAlt": "Cover art for the Restaurant Website project",
     "screenshots": [],
     "video": null,
-    "demoUrl": "",
-    "demoLabel": "Play",
+    "demoUrl": "https://restaurant-website.vercel.app",
+    "demoLabel": "Live Demo",
+    "sourceUrl": ""
+  },
+  {
+    "id": "valorant-landing",
+    "placeholder": false,
+    "title": "Valorant Landing Page",
+    "category": "web",
+    "year": "2026",
+    "status": "Live",
+    "tagline": "A game-themed landing page inspired by Valorant.",
+    "description": "A Valorant-inspired landing page website.",
+    "role": "Developer",
+    "tech": [
+      "Web"
+    ],
+    "highlights": [],
+    "thumbnail": "/projects/web-app.svg",
+    "thumbnailAlt": "Cover art for the Valorant Landing Page project",
+    "screenshots": [],
+    "video": null,
+    "demoUrl": "https://valorant-landing.vercel.app",
+    "demoLabel": "Live Demo",
+    "sourceUrl": ""
+  },
+  {
+    "id": "ecommerce-react",
+    "placeholder": false,
+    "title": "E-Commerce Website (React)",
+    "category": "web",
+    "year": "2026",
+    "status": "Live",
+    "tagline": "An online shop front end built with React.",
+    "description": "An e-commerce website built with React.",
+    "role": "Developer",
+    "tech": [
+      "React"
+    ],
+    "highlights": [],
+    "thumbnail": "/projects/web-app.svg",
+    "thumbnailAlt": "Cover art for the E-Commerce Website (React) project",
+    "screenshots": [],
+    "video": null,
+    "demoUrl": "https://e-commerceweb-react.vercel.app",
+    "demoLabel": "Live Demo",
+    "sourceUrl": ""
+  },
+  {
+    "id": "student-location",
+    "placeholder": false,
+    "title": "Student Location System",
+    "category": "web",
+    "year": "2026",
+    "status": "Live",
+    "tagline": "A website for locating students.",
+    "description": "A student location system web app.",
+    "role": "Developer",
+    "tech": [
+      "Web"
+    ],
+    "highlights": [],
+    "thumbnail": "/projects/web-app.svg",
+    "thumbnailAlt": "Cover art for the Student Location System project",
+    "screenshots": [],
+    "video": null,
+    "demoUrl": "https://studentlocationsystem.vercel.app",
+    "demoLabel": "Live Demo",
     "sourceUrl": ""
   }
 ]
