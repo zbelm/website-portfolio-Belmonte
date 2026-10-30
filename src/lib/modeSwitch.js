@@ -8,6 +8,9 @@
 
 export const MODE_KEY = 'p1-mode';
 
+// the visitor taking over (wheel, touch, keys, scrollbar or link clicks) ends the restore
+const INPUTS = ['wheel', 'touchstart', 'keydown', 'pointerdown'];
+
 const LINE = 0.35; // reading line, as a fraction of the viewport height
 
 /** The mode asked for by `?mode=`, if any (`pro`, `player-one` or `p1`). */
@@ -48,10 +51,10 @@ export function restoreAnchor(anchor) {
     let raf = 0;
     const stop = () => {
       cancelAnimationFrame(raf);
-      ['wheel', 'touchstart', 'keydown'].forEach((t) => window.removeEventListener(t, stop));
+      INPUTS.forEach((t) => window.removeEventListener(t, stop));
       resolve();
     };
-    ['wheel', 'touchstart', 'keydown'].forEach((t) => window.addEventListener(t, stop, { passive: true, once: true }));
+    INPUTS.forEach((t) => window.addEventListener(t, stop, { passive: true, once: true }));
 
     const tick = () => {
       const r = document.getElementById(anchor.id)?.getBoundingClientRect();

@@ -29,8 +29,13 @@ export default function ProApp() {
 
   // deep links (e.g. /?mode=pro#projects): the browser jumped before this tree existed
   useLayoutEffect(() => {
-    const id = decodeURIComponent(window.location.hash.slice(1));
-    document.getElementById(id)?.scrollIntoView({ behavior: 'instant', block: 'start' });
+    let id = '';
+    try {
+      id = decodeURIComponent(window.location.hash.slice(1));
+    } catch {
+      /* malformed escape in the hash: ignore it */
+    }
+    if (id) document.getElementById(id)?.scrollIntoView({ behavior: 'instant', block: 'start' });
   }, []);
 
   return (

@@ -1,7 +1,7 @@
 # Design: Professional mode
 
 > Scope: the **Professional** mode only. **Player One** (retro game theme, `src/styles/*`) is the incumbent world and is documented by its own code; it is not blended with, or restyled by, anything below.
-> Status: pre-build specification. Refresh from the built result at the finish review.
+> Status: built. Code lives in `src/pro/`; tokens in `src/pro/styles/pro-tokens.css`.
 
 All Professional styles live in `src/pro/styles/` and are scoped to `[data-mode='pro']`. Nothing here leaks into Player One.
 
@@ -44,15 +44,15 @@ Self-hosted in `public/fonts`, latin subset, `font-display: swap`, no CDN.
 
 - 8px grid: `--pro-s-1…9` = 4, 8, 16, 24, 32, 48, 64, 96, 128px. Section padding `clamp(64px, 10vw, 128px)`; more space above a heading than below.
 - Container 1120px, gutter 24px (16px under 480px).
-- Radius: 6 (controls), 12 (cards), 20 (drawer). Pills only for status and filter chips.
+- Radius: 6 (tags), 8 (buttons, inputs), 12 (cards), 20 (drawer). Pills only for status and filter chips.
 - Shadow: two soft layers with real offset and blur (`0 1px 2px` + `0 12px 32px -12px`); in dark mode borders carry elevation, shadows nearly vanish.
 - Never: colored side borders, hard offset shadows, nested cards.
 
 ## Components
 
 - **Mode switch**: native radio group styled as a segmented control, "Player One | Professional", visible focus ring, 44px targets.
-- **Nav**: sticky, hairline bottom border, name left, section links, mode switch, theme toggle; scroll-spy underline; 2px scroll-progress line under the bar. Mobile: popover menu.
-- **Project card**: 16:9 image (explicit ratio, lazy), title button stretched over the card, status dot, tagline, tech tags, live/source links raised above. Cursor-following spotlight on hover (pointer: fine).
+- **Nav**: sticky, hairline bottom border, 94% ground (no blur), name left, section links, mode switch, theme toggle; scroll-spy underline; 2px scroll-progress line under the bar. Mobile: popover menu.
+- **Project card**: 16:9 screenshot (explicit ratio, lazy; projects that only have Player One's SVG cover art get a neutral panel, or a text-only card when featured), title button stretched over the card, status dot, tagline, tech tags, live/source links raised above. Cursor-following spotlight on hover (pointer: fine).
 - **Project detail**: native `<dialog>` drawer (right on desktop, bottom sheet on mobile), `closedby="any"`.
 - **Skills**: grouped lists, each skill shows its tier word from `skills.json` (Learning / Working / Confident / Expert) plus a 4-step indicator; "learning" skills are labelled. No XP bars.
 - **Certifications**: compact issuer-badge cards, issuer filter, "Verify" link only when `verifyUrl` exists.
@@ -74,10 +74,10 @@ Language: calm, fast, exponential ease-out. Only `transform` and `opacity` anima
 | Count-up (once, tabular figures) | 900ms | `power2.out` |
 | Timeline rule draw | scrubbed to scroll | linear |
 | Drawer open / close | 260ms / 160ms | `cubic-bezier(0.32, 0.72, 0, 1)` |
-| Mode switch | 350ms View Transitions cross-fade, no fallback animation | ease-out |
+| Mode switch | 350ms View Transitions cross-fade; plain swap where unsupported or reduced motion | ease-out |
 | Hero gradient drift | 28s alternate, `transform` only | ease-in-out |
 
-Does not animate: scroll-spy state, filter result swaps, theme toggle, form validation, anything triggered by keyboard shortcuts. `prefers-reduced-motion` (via the `motion-ok` class): no movement, no count-up, no drift, no view-transition animation; opacity-only fades at most; all content is visible and usable without motion.
+Spotlight and card lift need a fine pointer; `will-change` is applied only while a card is hovered. Does not animate: scroll-spy state, filter result swaps, theme toggle, form validation, anything triggered by keyboard shortcuts. `prefers-reduced-motion` (via the `motion-ok` class): no movement, no count-up, no drift, no view-transition animation; opacity-only fades at most; all content is visible and usable without motion.
 
 ## Layout
 

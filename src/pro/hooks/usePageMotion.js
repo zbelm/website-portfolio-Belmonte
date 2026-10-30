@@ -34,12 +34,15 @@ export function usePageMotion(rootRef) {
             io.disconnect();
             if (!alive) return;
             const below = entries.filter((e) => !e.isIntersecting && e.boundingClientRect.top > 0).map((e) => e.target);
-            gsap.set(below, { opacity: 0, y: 16 });
-            ScrollTrigger.batch(below, {
-              start: 'top 94%',
-              once: true,
-              onEnter: (els) =>
-                gsap.to(els, { opacity: 1, y: 0, duration: 0.5, ease: EASE, stagger: 0.06, overwrite: true, clearProps: 'opacity,transform' }),
+            // created after the context callback returned, so register it for ctx.revert()
+            ctx.add(() => {
+              gsap.set(below, { opacity: 0, y: 16 });
+              ScrollTrigger.batch(below, {
+                start: 'top 94%',
+                once: true,
+                onEnter: (els) =>
+                  gsap.to(els, { opacity: 1, y: 0, duration: 0.5, ease: EASE, stagger: 0.06, overwrite: true, clearProps: 'opacity,transform' }),
+              });
             });
           },
           { rootMargin: '0px 0px -4% 0px' },

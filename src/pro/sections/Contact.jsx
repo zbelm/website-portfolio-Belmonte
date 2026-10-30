@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { SITE } from '../../config/site.js';
 import { CONTACT_LINKS, EMAIL_RE, FORM_KEY, sendMessage } from '../../lib/contact.js';
 import { COPY, SECTIONS } from '../labels.js';
@@ -7,7 +7,6 @@ import SectionHead from '../components/SectionHead.jsx';
 
 /** Contact: direct links + the same form (and VITE_FORM_KEY transport) as Player One. */
 export default function Contact() {
-  const formRef = useRef(null);
   const [status, setStatus] = useState('idle'); // idle | sending | sent | error
   const [errors, setErrors] = useState({});
   const [errorMsg, setErrorMsg] = useState('');
@@ -30,7 +29,7 @@ export default function Contact() {
     if (message.length < 10) next.message = 'Write at least 10 characters.';
     setErrors(next);
     if (Object.keys(next).length) {
-      formRef.current?.querySelector('[aria-invalid="true"]')?.focus();
+      document.getElementById(`pro-cf-${Object.keys(next)[0]}`)?.focus();
       return;
     }
     if (!FORM_KEY) {
@@ -125,7 +124,7 @@ export default function Contact() {
                 </button>
               </div>
             ) : (
-              <form ref={formRef} onSubmit={onSubmit} noValidate>
+              <form onSubmit={onSubmit} noValidate>
                 <h3 className="pro-h3">Send a message</h3>
                 {field('name', 'Name', { type: 'text', autoComplete: 'name' })}
                 {field('email', 'Email', { type: 'email', autoComplete: 'email' })}

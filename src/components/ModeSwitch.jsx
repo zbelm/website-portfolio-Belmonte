@@ -12,7 +12,8 @@ const OPTIONS = [
  * (pixel HUD / professional nav) styles the same markup.
  */
 export default function ModeSwitch({ className = '' }) {
-  const { mode, setMode, prefetchPro } = useMode();
+  const { mode, pending, setMode, prefetchPro } = useMode();
+  const shown = pending ?? mode;
   const name = useId();
 
   return (
@@ -25,7 +26,7 @@ export default function ModeSwitch({ className = '' }) {
     >
       {OPTIONS.map((o) => (
         <label key={o.value} className="mode-switch-opt">
-          <input type="radio" name={name} value={o.value} checked={mode === o.value} onChange={() => setMode(o.value)} />
+          <input type="radio" name={name} value={o.value} checked={shown === o.value} onChange={() => setMode(o.value)} />
           <span>{o.label}</span>
         </label>
       ))}

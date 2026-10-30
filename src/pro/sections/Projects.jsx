@@ -126,7 +126,8 @@ export default function Projects() {
   const gridRef = useRef(null);
   const [category, setCategory] = useState('all');
   const [tech, setTech] = useState(null);
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState(null); // stays set after closing so the drawer keeps its content while it animates out
+  const [open, setOpen] = useState(false);
   useSpotlight(gridRef);
 
   const list = useMemo(
@@ -175,13 +176,20 @@ export default function Projects() {
 
         <ul ref={gridRef} className="pro-cards">
           {list.map((p) => (
-            <ProjectCard key={p.id} project={p} onOpen={setSelected} />
+            <ProjectCard
+              key={p.id}
+              project={p}
+              onOpen={(project) => {
+                setSelected(project);
+                setOpen(true);
+              }}
+            />
           ))}
         </ul>
         {list.length === 0 && <p className="pro-empty">{COPY.noProjects}</p>}
       </div>
 
-      <Drawer open={Boolean(selected)} onClose={() => setSelected(null)} labelledBy="pro-project-title">
+      <Drawer open={open} onClose={() => setOpen(false)} labelledBy="pro-project-title">
         {selected && <ProjectDetail project={selected} />}
       </Drawer>
     </section>
