@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react';
 import { SITE } from '../../config/site.js';
-import { EMAIL_RE, FORM_KEY, sendMessage } from '../../lib/contact.js';
-import { CONTACT_LINKS } from '../data.js';
+import { CONTACT_LINKS, EMAIL_RE, FORM_KEY, sendMessage } from '../../lib/contact.js';
 import { COPY, SECTIONS } from '../labels.js';
 import { IconCheck, IconCopy } from '../icons.jsx';
 import SectionHead from '../components/SectionHead.jsx';

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useGame } from '../../context/GameContext.jsx';
+import { useMediaQuery } from '../../hooks/useMediaQuery.js';
 
 /**
  * Cursor-following spotlight on `.pro-card`s inside `ref`. The glow is a fixed-size layer
@@ -7,10 +8,11 @@ import { useGame } from '../../context/GameContext.jsx';
  */
 export function useSpotlight(ref) {
   const { reducedMotion } = useGame();
+  const mouse = useMediaQuery('(hover: hover) and (pointer: fine)');
 
   useEffect(() => {
     const root = ref.current;
-    if (!root || reducedMotion || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return undefined;
+    if (!root || reducedMotion || !mouse) return undefined;
     let raf = 0;
     let last;
     const paint = () => {
@@ -31,5 +33,5 @@ export function useSpotlight(ref) {
       root.removeEventListener('pointermove', onMove);
       cancelAnimationFrame(raf);
     };
-  }, [ref, reducedMotion]);
+  }, [ref, reducedMotion, mouse]);
 }

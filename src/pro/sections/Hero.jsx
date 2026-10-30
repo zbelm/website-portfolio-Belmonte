@@ -2,10 +2,11 @@ import { AVAILABILITY, profile } from '../data.js';
 import { COPY } from '../labels.js';
 import ResumeLink from '../components/ResumeLink.jsx';
 
+/** Staggers the entrance (see [data-hero] in pro.css). */
+const step = (i) => ({ '--i': i });
+
 /** Hero: name, role, one-line pitch, availability, resume + contact. The only <h1>. */
 export default function Hero() {
-  const step = (i) => ({ '--i': i });
-
   return (
     <section id="title" className="pro-hero" aria-labelledby="pro-hero-title">
       <div className="pro-hero-bg" aria-hidden="true">

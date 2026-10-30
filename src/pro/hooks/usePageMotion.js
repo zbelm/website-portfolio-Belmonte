@@ -73,7 +73,10 @@ export function usePageMotion(rootRef) {
     });
 
     // layout changes (fonts, filters, expanded lists) move the trigger points
+    let height = root.offsetHeight;
     const ro = new ResizeObserver(() => {
+      if (root.offsetHeight === height) return; // the initial callback reports no change
+      height = root.offsetHeight;
       clearTimeout(t);
       t = setTimeout(refreshScroll, 150);
     });

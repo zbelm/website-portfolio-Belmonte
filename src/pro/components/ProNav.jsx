@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useGame } from '../../context/GameContext.jsx';
 import ModeSwitch from '../../components/ModeSwitch.jsx';
-import { fullName } from '../data.js';
+import { fullName, monogram } from '../data.js';
 import { NAV } from '../labels.js';
 import { useScrollProgress } from '../hooks/useScrollProgress.js';
 import { IconMenu, IconMoon, IconSun } from '../icons.jsx';
@@ -29,9 +29,9 @@ export default function ProNav({ activeId }) {
   return (
     <header className="pro-nav">
       <div className="pro-nav-bar pro-container">
-        <a className="pro-brand" href="#title" aria-label={`FZB, ${fullName}, back to top`}>
+        <a className="pro-brand" href="#title" aria-label={`${monogram}, ${fullName}, back to top`}>
           <span className="pro-brand-mark" aria-hidden="true">
-            FZB
+            {monogram}
           </span>
           <span className="pro-brand-name" aria-hidden="true">
             {fullName}

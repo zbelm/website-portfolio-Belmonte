@@ -18,12 +18,10 @@ const initialMode = () => modeFromUrl() ?? (storage.get(MODE_KEY) === 'pro' ? 'p
 
 export function ModeProvider({ children }) {
   const [mode, setModeState] = useState(initialMode);
-  const modeRef = useRef(mode);
   const busy = useRef(false);
 
   // layout effect so the new mode's CSS applies in the same frame as the new tree
   useLayoutEffect(() => {
-    modeRef.current = mode;
     document.documentElement.dataset.mode = mode;
   }, [mode]);
 
@@ -33,11 +31,18 @@ export function ModeProvider({ children }) {
   }, []);
 
   const setMode = useCallback(async (next) => {
-    if (next === modeRef.current || busy.current) return;
+    if (next === mode || busy.current) return;
     busy.current = true;
     storage.set(MODE_KEY, next);
     // never swap to a half-loaded tree: wait for the chunk first
-    if (next === 'pro') await loadPro().catch(() => {});
+    if (next === 'pro') {
+      await loadPro().catch(() => {});
+      // have the fonts ready so the page doesn't reflow right after the cross-fade (but never wait long)
+      await Promise.race([
+        Promise.all(['400 1em Geist', '400 1em Gloock'].map((f) => document.fonts.load(f).catch(() => {}))),
+        new Promise((r) => setTimeout(r, 600)),
+      ]);
+    }
 
     const anchor = captureAnchor();
     cleanUrl(); // Player One re-scrolls to location.hash on mount; our own restore replaces that
@@ -57,7 +62,7 @@ export function ModeProvider({ children }) {
     await restored;
     cleanUrl(anchor?.id);
     busy.current = false;
-  }, []);
+  }, [mode]);
 
   const value = useMemo(() => ({ mode, setMode, prefetchPro }), [mode, setMode, prefetchPro]);
   return <ModeContext.Provider value={value}>{children}</ModeContext.Provider>;

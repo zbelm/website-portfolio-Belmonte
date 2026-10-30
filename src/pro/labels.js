@@ -36,7 +36,7 @@ export const PROJECT_FILTERS = [
   { id: 'app', label: 'App' },
   { id: 'game', label: 'Game' },
 ];
-export const CATEGORY_LABEL = { web: 'Web', app: 'App', game: 'Game' };
+export const CATEGORY_LABEL = Object.fromEntries(PROJECT_FILTERS.filter((f) => f.id !== 'all').map((f) => [f.id, f.label]));
 
 export const TIMELINE_TYPE = {
   education: 'Education',
@@ -50,7 +50,6 @@ export const TIMELINE_TYPE = {
 export const COPY = {
   resume: 'Download resume',
   contactCta: 'Contact me',
-  viewProjects: 'View projects',
   noDemo: 'No public demo yet',
   privateSource: 'Source is private',
   demoDefault: 'Live demo',

@@ -331,8 +331,7 @@
     position: sticky;
     top: 0;
     z-index: 40;
-    background: color-mix(in srgb, var(--pro-bg) 88%, transparent);
-    backdrop-filter: blur(10px);
+    background: color-mix(in srgb, var(--pro-bg) 94%, transparent);
     border-bottom: 1px solid var(--pro-line);
   }
 
@@ -851,7 +850,6 @@
     margin: -180px 0 0 -180px;
     border-radius: 50%;
     background: radial-gradient(closest-side, color-mix(in srgb, var(--pro-accent) 16%, transparent), transparent);
-    will-change: transform;
   }
 
   .pro-card-media {
@@ -968,6 +966,9 @@
     .pro-card:hover::after,
     .pro-card:hover .pro-spot-wrap {
       opacity: 1;
+    }
+    .pro-card:hover .pro-spot {
+      will-change: transform;
     }
   }
 

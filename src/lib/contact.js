@@ -3,6 +3,9 @@
  * Uses Web3Forms by default (set VITE_FORM_KEY to your access key),
  * or Formspree (set VITE_FORM_PROVIDER=formspree and VITE_FORM_KEY to your form ID).
  */
+import streams from '../data/streams.json';
+import { SITE } from '../config/site.js';
+
 export const FORM_KEY = import.meta.env.VITE_FORM_KEY;
 const PROVIDER = (import.meta.env.VITE_FORM_PROVIDER || 'web3forms').toLowerCase();
 export const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -34,3 +37,9 @@ export async function sendMessage({ name, email, message }, fromName = 'Player O
   const json = await res.json().catch(() => ({}));
   if (!res.ok || !json.success) throw new Error(json.message || 'Web3Forms rejected the message');
 }
+
+/** Contact links: the site's socials + any creator channel that has a real URL. */
+export const CONTACT_LINKS = [
+  ...SITE.socials,
+  ...streams.channels.filter((c) => c.url).map((c) => ({ id: c.platform, label: c.platform, icon: c.icon, href: c.url, handle: c.handle })),
+];

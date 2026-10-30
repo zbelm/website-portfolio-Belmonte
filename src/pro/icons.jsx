@@ -32,21 +32,11 @@ export const IconMenu = icon(<path d="M4 7h16M4 12h16M4 17h16" />);
 export const IconClose = icon(<path d="M6 6l12 12M18 6 6 18" />);
 export const IconDownload = icon(<path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14" />);
 export const IconArrowUpRight = icon(<path d="M7 17 17 7M8 7h9v9" />);
-export const IconArrowDown = icon(<path d="M12 5v14m0 0-5-5m5 5 5-5" />);
 export const IconArrowUp = icon(<path d="M12 19V5m0 0-5 5m5-5 5 5" />);
 export const IconCheck = icon(<path d="m5 12.5 4.5 4.5L19 7.5" />);
-export const IconMail = icon(
-  <>
-    <rect x="3" y="5" width="18" height="14" rx="2" />
-    <path d="m3.5 7 8.5 6 8.5-6" />
-  </>,
-);
-export const IconCode = icon(<path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 6l-3 12" />);
-export const IconLink = icon(<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3A4 4 0 0 0 11 18.7l1-1" />);
 export const IconCopy = icon(
   <>
     <rect x="8" y="8" width="12" height="12" rx="2" />
     <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" />
   </>,
 );
-export const IconPlay = icon(<path d="M8 5.5v13l11-6.5-11-6.5Z" />);

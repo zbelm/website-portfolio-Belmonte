@@ -54,15 +54,12 @@
   --pro-fs-xs: 0.8125rem;
 
   /* ---------- space: 8px grid ---------- */
-  --pro-s1: 4px;
   --pro-s2: 8px;
   --pro-s3: 16px;
   --pro-s4: 24px;
   --pro-s5: 32px;
   --pro-s6: 48px;
   --pro-s7: 64px;
-  --pro-s8: 96px;
-  --pro-s9: 128px;
   --pro-section: clamp(64px, 10vw, 128px);
   --pro-gutter: 24px;
   --pro-container: 1120px;
@@ -81,7 +78,6 @@
   --pro-ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
   --pro-dur-press: 120ms;
   --pro-dur-fast: 200ms;
-  --pro-dur-base: 350ms;
 }
 
 [data-mode='pro'][data-theme='dark'] {

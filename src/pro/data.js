@@ -7,9 +7,7 @@ import certifications from '../data/certifications.json';
 import profile from '../data/profile.json';
 import projects from '../data/projects.json';
 import skills from '../data/skills.json';
-import streams from '../data/streams.json';
 import timeline from '../data/timeline.json';
-import { SITE } from '../config/site.js';
 import { isPlaceholder } from '../lib/format.js';
 import { proText } from './labels.js';
 
@@ -19,8 +17,9 @@ const clean = (text) => (isPlaceholder(text) ? '' : text);
 export { profile, skills };
 
 export const fullName = `${profile.firstName} ${profile.lastName}`;
+/** "FZB": the initials of every word in the name. */
+export const monogram = fullName.split(/\s+/).map((w) => w[0]).join('');
 
-/** Featured project first (Player One's "boss"), then data order. */
 /*
  * Only real screenshots (.webp/.png/.jpg) are shown as project images. The .svg files in
  * public/projects are Player One's retro cover art (some carry baked-in "[REPLACE ME]" text),
@@ -29,6 +28,7 @@ export const fullName = `${profile.firstName} ${profile.lastName}`;
 const hasScreenshot = (p) => !/\.svg(\?|$)/i.test(p.thumbnail ?? '');
 const initials = (title) => title.split(/[\s—-]+/).filter(Boolean).slice(0, 2).map((w) => w[0].toUpperCase()).join('');
 
+/** Featured project first (Player One's "boss"), then data order. */
 export const PROJECTS = projects
   .filter((p) => !hasPlaceholder(p))
   .map((p) => ({
@@ -50,12 +50,6 @@ export const CERTS = certifications
 
 export const STORY = profile.story.map(clean).filter(Boolean);
 export const AVAILABILITY = clean(profile.availability);
-
-/** Contact links: the site's socials + any creator channel that has a real URL (same rule as Player One). */
-export const CONTACT_LINKS = [
-  ...SITE.socials,
-  ...streams.channels.filter((c) => c.url).map((c) => ({ id: c.platform, label: c.platform, href: c.url, handle: c.handle })),
-];
 
 /** Counts shown in About; derived from the data, never typed in. */
 export const STATS = [

@@ -1,12 +1,8 @@
 import { useRef, useState } from 'react';
 import { SITE } from '../config/site.js';
-import { formatBytes } from '../lib/format.js';
+import { formatBytes, RESUME_BYTES } from '../lib/format.js';
 import { ICON_ARROW_DOWN, ICON_PALETTE, ICON_TRAY } from '../lib/pixelArt.js';
 import PixelSprite from './PixelSprite.jsx';
-
-// injected by vite.config.js from the real size of public/resume.pdf
-// eslint-disable-next-line no-undef
-const RESUME_BYTES = typeof __RESUME_SIZE__ !== 'undefined' ? __RESUME_SIZE__ : 0;
 
 /**
  * Download Resume (PDF) button with a pixel "arrow drops into tray" animation

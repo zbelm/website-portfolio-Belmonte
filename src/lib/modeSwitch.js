@@ -3,11 +3,10 @@
  * Player One and Professional. Both modes use the same section ids
  * (see config/levels.js), so we remember which section is under a reading
  * line plus how far through it we were, then restore that after the swap.
+ * Sections are read from the live DOM, since each mode orders them differently.
  */
-import { SECTION_IDS } from '../config/levels.js';
 
 export const MODE_KEY = 'p1-mode';
-export const MODES = ['player-one', 'pro'];
 
 const LINE = 0.35; // reading line, as a fraction of the viewport height
 
@@ -24,12 +23,10 @@ export function captureAnchor() {
   if (window.scrollY < 8) return null;
   const line = window.innerHeight * LINE;
   let best = null;
-  for (const id of SECTION_IDS) {
-    const el = document.getElementById(id);
-    if (!el) continue;
+  for (const el of document.querySelectorAll('main > section[id]')) {
     const r = el.getBoundingClientRect();
-    if (r.top <= line && r.bottom > line) return { id, frac: (line - r.top) / r.height };
-    if (r.bottom <= line) best = { id, frac: 1 };
+    if (r.top <= line && r.bottom > line) return { id: el.id, frac: (line - r.top) / r.height };
+    if (r.bottom <= line) best = { id: el.id, frac: 1 };
   }
   return best;
 }
@@ -57,10 +54,10 @@ export function restoreAnchor(anchor) {
     ['wheel', 'touchstart', 'keydown'].forEach((t) => window.addEventListener(t, stop, { passive: true, once: true }));
 
     const tick = () => {
-      const el = document.getElementById(anchor.id);
-      const h = el?.getBoundingClientRect().height ?? 0;
+      const r = document.getElementById(anchor.id)?.getBoundingClientRect();
+      const h = r?.height ?? 0;
       if (h > 0) {
-        const top = el.getBoundingClientRect().top + window.scrollY + anchor.frac * h - window.innerHeight * LINE;
+        const top = r.top + window.scrollY + anchor.frac * h - window.innerHeight * LINE;
         window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
         // re-apply a few times: off-screen sections use content-visibility and settle their height late
         if (++settled >= 20) return stop();
