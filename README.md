@@ -15,7 +15,7 @@ A retro 8-bit / 16-bit game–themed portfolio for an IT student (BSIT – Mobil
 | Levels | About (Character Select), Projects (Level Select + Boss Level + filters + detail modal), Certifications (Trophy Room with search, issuer chips, counter), Skills (XP bars), Quest Log (timeline), Streamer Mode, Contact (Join My Party), Footer |
 | Motion | GSAP ScrollTrigger parallax + world-map progress rail with a walking character, GSAP pixel-dissolve section transitions, stepped 8-bit reveals and screen-wipe titles, mouse-reactive particle field, pixel cursor + trail, click sparkles, glitch text on hover |
 | Easter eggs | Konami code (↑↑↓↓←→←→BA) → confetti + **Coin Rush** mini-game, 5 hidden secret coins with a HUD counter, "Insert coin" button in the footer |
-| Modes | **Player One | Professional** switch in the HUD and mobile menu: the same content as a calm, recruiter-friendly page (see [Professional mode](#professional-mode)) |
+| Modes | **Player One \| Professional** switch in the HUD and mobile menu: the same content as a calm, recruiter-friendly page (see [Professional mode](#professional-mode)) |
 | Settings | Night Arcade / Day World theme (remembers choice, follows system by default), 8-bit sound effects (OFF by default), CRT scanlines toggle |
 | Quality | Keyboard navigation, skip link, visible focus, AA contrast in both themes, `prefers-reduced-motion` calm mode, lazy images, self-hosted fonts, SEO + Open Graph + JSON-LD |
 
