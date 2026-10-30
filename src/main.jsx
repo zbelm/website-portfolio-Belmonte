@@ -9,11 +9,14 @@ import './styles/sections.css';
 
 import App from './App.jsx';
 import { GameProvider } from './context/GameContext.jsx';
+import { ModeProvider } from './context/ModeContext.jsx';
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <GameProvider>
-      <App />
-    </GameProvider>
+    <ModeProvider>
+      <GameProvider>
+        <App />
+      </GameProvider>
+    </ModeProvider>
   </React.StrictMode>,
 );

@@ -1,0 +1,104 @@
+/* ==========================================================
+   Professional mode: design tokens
+   Everything is scoped to [data-mode='pro'] so nothing leaks into Player One.
+   Light is the default; dark follows html[data-theme='dark'] (shared theme state).
+   Every text/background pair is >= 4.5:1; control borders >= 3:1.
+   Browser-chrome colors (--pro-bg) are mirrored in context/GameContext.jsx and index.html.
+   ========================================================== */
+
+/* Self-hosted, latin subset (SIL Open Font License), preloaded by index.html when the page starts in this mode */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/geist-latin-wght.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Gloock';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/gloock-latin-400.woff2') format('woff2');
+}
+
+[data-mode='pro'] {
+  color-scheme: light;
+
+  /* ---------- color ---------- */
+  --pro-bg: #f5f6f9;
+  --pro-surface: #ffffff;
+  --pro-surface-2: #edeff4;
+  --pro-ink: #0d1222;
+  --pro-muted: #4a5368;
+  --pro-faint: #5d6679;
+  --pro-line: #d9dde6;
+  --pro-line-strong: #7b849a;
+  --pro-accent: #1d4ed8;
+  --pro-accent-strong: #1a43b8;
+  --pro-accent-ink: #ffffff;
+  --pro-danger: #b42318;
+  --pro-shadow: 15 23 42; /* rgb triplet for shadows */
+
+  /* ---------- type ---------- */
+  --pro-font-ui: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --pro-font-display: 'Gloock', Georgia, 'Times New Roman', serif;
+  --pro-font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  --pro-fs-hero: clamp(2.75rem, 1.2rem + 7vw, 6rem);
+  --pro-fs-h2: clamp(2rem, 1.2rem + 3vw, 3.25rem);
+  --pro-fs-h3: 1.25rem;
+  --pro-fs-lead: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --pro-fs-body: 1rem;
+  --pro-fs-sm: 0.875rem;
+  --pro-fs-xs: 0.8125rem;
+
+  /* ---------- space: 8px grid ---------- */
+  --pro-s2: 8px;
+  --pro-s3: 16px;
+  --pro-s4: 24px;
+  --pro-s5: 32px;
+  --pro-s6: 48px;
+  --pro-s7: 64px;
+  --pro-section: clamp(64px, 10vw, 128px);
+  --pro-gutter: 24px;
+  --pro-container: 1120px;
+  --pro-nav-h: 64px;
+
+  /* ---------- shape + depth ---------- */
+  --pro-r-sm: 6px;
+  --pro-r-md: 8px;
+  --pro-r-lg: 12px;
+  --pro-r-xl: 20px;
+  --pro-shadow-sm: 0 1px 2px rgb(var(--pro-shadow) / 0.06), 0 2px 8px -2px rgb(var(--pro-shadow) / 0.06);
+  --pro-shadow-lg: 0 2px 4px rgb(var(--pro-shadow) / 0.05), 0 18px 40px -14px rgb(var(--pro-shadow) / 0.22);
+
+  /* ---------- motion ---------- */
+  --pro-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --pro-ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --pro-dur-press: 120ms;
+  --pro-dur-fast: 200ms;
+}
+
+[data-mode='pro'][data-theme='dark'] {
+  color-scheme: dark;
+  --pro-bg: #0a0e1a;
+  --pro-surface: #111729;
+  --pro-surface-2: #182038;
+  --pro-ink: #eceff7;
+  --pro-muted: #a4aec4;
+  --pro-faint: #8f9ab3;
+  --pro-line: #252d44;
+  --pro-line-strong: #5b6684;
+  --pro-accent: #8aa9ff;
+  --pro-accent-strong: #a9c0ff;
+  --pro-accent-ink: #0a0e1a;
+  --pro-danger: #ff9b92;
+  --pro-shadow: 0 0 0;
+}
+
+@media (max-width: 480px) {
+  [data-mode='pro'] {
+    --pro-gutter: 16px;
+  }
+}

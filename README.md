@@ -15,6 +15,7 @@ A retro 8-bit / 16-bit game–themed portfolio for an IT student (BSIT – Mobil
 | Levels | About (Character Select), Projects (Level Select + Boss Level + filters + detail modal), Certifications (Trophy Room with search, issuer chips, counter), Skills (XP bars), Quest Log (timeline), Streamer Mode, Contact (Join My Party), Footer |
 | Motion | GSAP ScrollTrigger parallax + world-map progress rail with a walking character, GSAP pixel-dissolve section transitions, stepped 8-bit reveals and screen-wipe titles, mouse-reactive particle field, pixel cursor + trail, click sparkles, glitch text on hover |
 | Easter eggs | Konami code (↑↑↓↓←→←→BA) → confetti + **Coin Rush** mini-game, 5 hidden secret coins with a HUD counter, "Insert coin" button in the footer |
+| Modes | **Player One \| Professional** switch in the HUD and mobile menu: the same content as a calm, recruiter-friendly page (see [Professional mode](#professional-mode)) |
 | Settings | Night Arcade / Day World theme (remembers choice, follows system by default), 8-bit sound effects (OFF by default), CRT scanlines toggle |
 | Quality | Keyboard navigation, skip link, visible focus, AA contrast in both themes, `prefers-reduced-motion` calm mode, lazy images, self-hosted fonts, SEO + Open Graph + JSON-LD |
 
@@ -128,6 +129,18 @@ Vercel builds that branch at its own **Preview URL** (shown in the Vercel dashbo
 
 ---
 
+## Professional mode
+
+A second presentation of the same site for recruiters: hero, about, selected projects (filters + detail drawer), experience timeline, skills, certifications and contact. It has its own light and dark themes and shares the Night Arcade / Day World choice.
+
+- **Switching:** the "Player One | Professional" control in the HUD (and the mobile menu) swaps the whole page in place. No reload; you stay on the same section and `#hash` links keep working. The choice is saved in `localStorage` (`p1-mode`). First-time visitors get Player One.
+- **Send recruiters straight to it:** `https://<your-site>/?mode=pro` (optionally with a section, e.g. `/?mode=pro#projects`). `?mode=player-one` forces the game version. The link does not overwrite a visitor's saved choice.
+- **Content is the same JSON.** Edit `src/data/*.json` and `src/config/site.js` as usual and both modes update. Professional hides placeholders (`[REPLACE ME]`, `"placeholder": true`), the HP/MP/ATK flavor stats and the streaming section.
+- **Wording:** game labels are re-labelled in `src/pro/labels.js` (Quest Log → Experience & education, Skill Tree → Technical skills, Trophy Room → Certifications, Boss Level → Featured project). A few game phrases inside the data ("(Boss Level)", "Main quest.", "the Trophy Room") are rewritten for display only; the JSON is untouched.
+- **Project images:** only real screenshots (`.webp` / `.png` / `.jpg`) are shown. A project whose thumbnail is an `.svg` (Player One's pixel cover art) gets a neutral panel, or a text-only card when it is the featured project. Add a screenshot to `public/projects/` and point `thumbnail` at it to show it.
+- **Design notes:** [`PRODUCT.md`](PRODUCT.md) (audience, constraints) and [`DESIGN.md`](DESIGN.md) (palette, type, spacing, motion). All Professional CSS is scoped under `[data-mode='pro']`; the UI is a separate lazy-loaded chunk (`src/pro/`), so Player One visitors only download it when they switch.
+- **Not mounted in Professional:** boot screen, CRT, pixel cursor, particles, coins, confetti, Konami and sound.
+
 ## 6. Editing content (no component code needed)
 
 All content lives in `src/data/` (and site-wide settings in `src/config/site.js`). Anything still marked **`[REPLACE ME]`** or `"placeholder": true` shows an orange **[REPLACE ME]** tag on the site — fix the text, then delete the `"placeholder": true` line to hide the tag.
@@ -226,6 +239,7 @@ Levels are **1–10**, explained on the page by the `scale` (Learning / Working 
    ├─ hooks/               # reveal animations, active section, konami, media queries
    ├─ lib/                 # GSAP setup, 8-bit synth, pixel-art grids, helpers
    ├─ components/          # HUD, world map, boot screen, avatar, 3D cube, effects, modal…
+   ├─ pro/                 # Professional mode (lazy chunk): ProApp, sections/, components/, hooks/, styles/, labels.js, data.js
    ├─ sections/            # one file per level
    └─ styles/              # tokens (both themes), base, components, sections
 ```

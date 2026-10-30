@@ -1,53 +1,12 @@
 import { useRef, useState } from 'react';
-import streams from '../data/streams.json';
 import { SITE } from '../config/site.js';
+import { CONTACT_LINKS, EMAIL_RE, FORM_KEY, sendMessage } from '../lib/contact.js';
 import { useReveal } from '../hooks/useReveal.js';
 import { play } from '../lib/sound.js';
 import { ENVELOPE, ENVELOPE_PALETTE } from '../lib/pixelArt.js';
 import PixelDivider from '../components/PixelDivider.jsx';
 import PixelSprite from '../components/PixelSprite.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
-
-/*
- * Contact form — no server needed.
- * Uses Web3Forms by default (set VITE_FORM_KEY to your access key),
- * or Formspree (set VITE_FORM_PROVIDER=formspree and VITE_FORM_KEY to your form ID).
- */
-const FORM_KEY = import.meta.env.VITE_FORM_KEY;
-const PROVIDER = (import.meta.env.VITE_FORM_PROVIDER || 'web3forms').toLowerCase();
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-async function sendMessage({ name, email, message }) {
-  if (PROVIDER === 'formspree') {
-    const res = await fetch(`https://formspree.io/f/${FORM_KEY}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({ name, email, message, _subject: `Portfolio message from ${name}` }),
-    });
-    if (!res.ok) throw new Error('Formspree rejected the message');
-    return;
-  }
-  const res = await fetch('https://api.web3forms.com/submit', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-    body: JSON.stringify({
-      access_key: FORM_KEY,
-      subject: `Portfolio message from ${name}`,
-      from_name: 'Player One Portfolio',
-      name,
-      email,
-      message,
-      botcheck: '',
-    }),
-  });
-  const json = await res.json().catch(() => ({}));
-  if (!res.ok || !json.success) throw new Error(json.message || 'Web3Forms rejected the message');
-}
-
-const contactLinks = [
-  ...SITE.socials,
-  ...streams.channels.filter((c) => c.url).map((c) => ({ id: c.platform, label: c.platform, icon: c.icon, href: c.url, handle: c.handle })),
-];
 
 /** LEVEL 2-3 — Join My Party: contact form + links. */
 export default function Contact() {
@@ -124,7 +83,7 @@ export default function Contact() {
             <h3>Party invites</h3>
             <p>Pick a channel. Email is the fastest way to reach me.</p>
             <ul className="link-list">
-              {contactLinks.map((l) => {
+              {CONTACT_LINKS.map((l) => {
                 const external = l.href.startsWith('http');
                 return (
                   <li key={l.id}>

@@ -7,15 +7,23 @@ import { createContext, useCallback, useContext, useEffect, useLayoutEffect, use
 import { storage } from '../lib/storage.js';
 import { play, setSoundEnabled } from '../lib/sound.js';
 import { useMediaQuery } from '../hooks/useMediaQuery.js';
+import { useMode } from './ModeContext.jsx';
 
 /** Secret coins hidden around the site. Add an id here + a <SecretCoin id="..."/> to add more. */
 export const COIN_IDS = ['avatar', 'about', 'projects', 'achievements', 'footer'];
+
+/** Browser-chrome color per mode and theme (Professional: --pro-bg in pro/styles/pro-tokens.css). */
+const THEME_COLOR = {
+  'player-one': { light: '#eaf6ff', dark: '#0d0221' },
+  pro: { light: '#f5f6f9', dark: '#0a0e1a' },
+};
 
 const GameContext = createContext(null);
 
 export function GameProvider({ children }) {
   const reducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
   const prefersLight = useMediaQuery('(prefers-color-scheme: light)');
+  const { mode } = useMode();
 
   // enables the CSS scroll-reveal start states (base.css) only when motion is welcome
   useLayoutEffect(() => {
@@ -40,8 +48,8 @@ export function GameProvider({ children }) {
     root.dataset.theme = theme;
     document
       .querySelectorAll('meta[name="theme-color"]')
-      .forEach((m) => m.setAttribute('content', theme === 'light' ? '#eaf6ff' : '#0d0221'));
-  }, [theme]);
+      .forEach((m) => m.setAttribute('content', THEME_COLOR[mode][theme]));
+  }, [theme, mode]);
 
   const toggleTheme = useCallback(() => {
     const next = theme === 'dark' ? 'light' : 'dark';
@@ -52,7 +60,8 @@ export function GameProvider({ children }) {
 
   /* ---------- Sound (OFF by default) ---------- */
   const [sound, setSound] = useState(() => storage.get('p1-sound') === 'on');
-  useEffect(() => setSoundEnabled(sound), [sound]);
+  // Professional mode is silent whatever the saved preference says
+  useEffect(() => setSoundEnabled(sound && mode === 'player-one'), [sound, mode]);
   const toggleSound = useCallback(() => {
     const next = !sound;
     setSound(next);

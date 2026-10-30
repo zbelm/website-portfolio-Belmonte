@@ -19,3 +19,7 @@ export function formatBytes(bytes) {
 }
 
 export const isPlaceholder = (text) => typeof text === 'string' && text.includes('[REPLACE ME]');
+
+// injected by vite.config.js from the real size of public/resume.pdf
+// eslint-disable-next-line no-undef
+export const RESUME_BYTES = typeof __RESUME_SIZE__ !== 'undefined' ? __RESUME_SIZE__ : 0;

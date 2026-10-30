@@ -11,6 +11,7 @@ import {
   ICON_SUN,
   ICON_TV,
 } from '../lib/pixelArt.js';
+import ModeSwitch from './ModeSwitch.jsx';
 import PixelSprite from './PixelSprite.jsx';
 import ResumeButton from './ResumeButton.jsx';
 
@@ -118,6 +119,7 @@ export default function Hud({ activeId }) {
         </nav>
 
         <div className="hud-tools">
+          <ModeSwitch className="hud-mode" />
           <CoinCounter className="hide-below-sm" />
           <ResumeButton variant="hud" className="hide-below-sm" />
           <Toggles />
@@ -151,6 +153,7 @@ export default function Hud({ activeId }) {
           </ul>
         </nav>
         <div className="hud-menu-tools">
+          <ModeSwitch className="hud-mode-menu" />
           <ResumeButton />
           <div className="hud-menu-toggles">
             <Toggles withLabels />

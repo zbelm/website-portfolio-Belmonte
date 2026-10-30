@@ -1466,3 +1466,88 @@
   text-align: center;
   color: var(--muted);
 }
+
+/* ---------- Mode switch: "Player One | Professional" (pixel skin; Professional restyles it in pro/styles) ---------- */
+.mode-switch {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  box-shadow: 0 -2px 0 var(--border), 0 2px 0 var(--border), -2px 0 0 var(--border), 2px 0 0 var(--border);
+}
+
+.mode-switch-opt {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  min-height: 40px;
+  padding: 0 10px;
+  background: var(--surface);
+  color: var(--muted);
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.mode-switch-opt:hover {
+  background: var(--surface-2);
+}
+
+.mode-switch-opt:has(input:checked) {
+  background: var(--btn-yellow);
+  color: var(--on-accent);
+}
+
+/* the real radio sits invisibly on top, so a click anywhere in the segment hits it */
+.mode-switch-opt input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.mode-switch-opt:has(input:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  z-index: 1;
+}
+
+.hud-mode {
+  display: none;
+}
+
+.hud-mode-menu {
+  display: flex;
+  width: 100%;
+}
+
+.hud-mode-menu .mode-switch-opt {
+  flex: 1;
+}
+
+@media (min-width: 900px) {
+  .hud-mode {
+    display: inline-flex;
+  }
+}
+
+/* nav links + resume + switch all share the bar here: tighten the switch so Resume stays on one line */
+@media (min-width: 1180px) and (max-width: 1279px) {
+  .hud-mode .mode-switch-opt {
+    padding: 0 6px;
+    font-size: 0.44rem;
+  }
+}
+
+@media (min-width: 1180px) and (max-width: 1239px) {
+  .hud-bar {
+    gap: 8px;
+  }
+  .hud-nav a {
+    padding-inline: 6px;
+  }
+}
