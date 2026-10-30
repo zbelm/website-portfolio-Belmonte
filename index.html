@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="dark" data-crt="on">
+<html lang="en" data-theme="dark" data-crt="on" data-mode="player-one">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -37,7 +37,7 @@
 
     <script type="application/ld+json">{{JSON_LD}}</script>
 
-    <!-- Apply saved theme / CRT setting before first paint (no flash) -->
+    <!-- Apply saved mode / theme / CRT setting before first paint (no flash) -->
     <script>
       (function () {
         try {
@@ -46,6 +46,26 @@
           if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
           d.dataset.theme = t;
           d.dataset.crt = localStorage.getItem('p1-crt') === 'off' ? 'off' : 'on';
+          // mode: ?mode=pro wins, then the saved choice, else Player One (see context/ModeContext.jsx)
+          var q = new URLSearchParams(location.search).get('mode');
+          var pro = q === 'pro' || (q !== 'player-one' && q !== 'p1' && localStorage.getItem('p1-mode') === 'pro');
+          d.dataset.mode = pro ? 'pro' : 'player-one';
+          if (pro) {
+            // Professional paints its own ground and starts its fonts early (colors mirror --pro-bg / --pro-ink)
+            var st = document.createElement('style');
+            st.textContent =
+              'html[data-mode=pro] body{background:#f5f6f9;color:#0d1222}html[data-mode=pro][data-theme=dark] body{background:#0a0e1a;color:#eceff7}';
+            document.head.appendChild(st);
+            ['geist-latin-wght', 'gloock-latin-400'].forEach(function (f) {
+              var l = document.createElement('link');
+              l.rel = 'preload';
+              l.as = 'font';
+              l.type = 'font/woff2';
+              l.crossOrigin = '';
+              l.href = '/fonts/' + f + '.woff2';
+              document.head.appendChild(l);
+            });
+          }
         } catch (e) {}
       })();
     </script>

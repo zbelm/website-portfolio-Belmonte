@@ -1,10 +1,12 @@
 import { lazy, startTransition, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { SECTION_IDS } from './config/levels.js';
 import { useGame } from './context/GameContext.jsx';
+import { useMode } from './context/ModeContext.jsx';
 import { useActiveSection } from './hooks/useActiveSection.js';
 import { useKonami } from './hooks/useKonami.js';
 import { refreshScroll } from './lib/motion.js';
 import { storage } from './lib/storage.js';
+import { loadPro } from './pro/load.js';
 
 import BootScreen from './components/BootScreen.jsx';
 import Confetti from './components/Confetti.jsx';
@@ -26,8 +28,23 @@ import Skills from './sections/Skills.jsx';
 
 // the hidden mini-game is only downloaded when someone unlocks it
 const KonamiGame = lazy(() => import('./components/KonamiGame.jsx'));
+// Professional mode is its own chunk: Player One visitors never download it unless they switch
+const ProApp = lazy(loadPro);
 
+/** Player One (retro game) or Professional, depending on the visitor's mode. */
 export default function App() {
+  const { mode } = useMode();
+  if (mode === 'pro') {
+    return (
+      <Suspense fallback={null}>
+        <ProApp />
+      </Suspense>
+    );
+  }
+  return <PlayerOne />;
+}
+
+function PlayerOne() {
   const { unlock } = useGame();
   const [booting, setBooting] = useState(() => storage.get('p1-booted') !== '1');
   // Levels below the title screen render in a (time-sliced) transition right after
