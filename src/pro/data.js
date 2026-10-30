@@ -49,7 +49,8 @@ export const CERTS = certifications
   .sort((a, b) => String(b.date).localeCompare(String(a.date)));
 
 export const STORY = profile.story.map(clean).filter(Boolean);
-export const AVAILABILITY = clean(profile.availability);
+/** "Available for OJT in November 2026 · Required hours: 800 hrs total · Onsite only" → three facts. */
+export const AVAILABILITY_ITEMS = clean(profile.availability).split(' · ').map((t) => t.trim()).filter(Boolean);
 
 /** Counts shown in About; derived from the data, never typed in. */
 export const STATS = [

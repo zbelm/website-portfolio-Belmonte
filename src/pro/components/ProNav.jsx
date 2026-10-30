@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useGame } from '../../context/GameContext.jsx';
 import ModeSwitch from '../../components/ModeSwitch.jsx';
 import { fullName, monogram } from '../data.js';
@@ -12,7 +12,27 @@ export default function ProNav({ activeId }) {
   const { theme, toggleTheme } = useGame();
   const barRef = useRef(null);
   const menuRef = useRef(null);
+  const listRef = useRef(null);
+  const indRef = useRef(null);
   useScrollProgress(barRef);
+
+  // one indicator that slides to the active link (measured on change/resize only, applied as a transform)
+  useEffect(() => {
+    const list = listRef.current;
+    const ind = indRef.current;
+    if (!list || !ind) return undefined;
+    const place = () => {
+      const a = list.querySelector('a[aria-current="true"]');
+      if (!a) return ind.classList.remove('is-on');
+      ind.style.transform = `translateX(${a.offsetLeft + 12}px) scaleX(${a.offsetWidth - 24})`;
+      ind.classList.add('is-on');
+    };
+    place();
+    const ro = new ResizeObserver(place);
+    ro.observe(list);
+    document.fonts?.ready.then(place);
+    return () => ro.disconnect();
+  }, [activeId]);
 
   const closeMenu = () => menuRef.current?.hidePopover?.();
   const themeLabel = theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
@@ -29,7 +49,7 @@ export default function ProNav({ activeId }) {
   return (
     <header className="pro-nav">
       <div className="pro-nav-bar pro-container">
-        <a className="pro-brand" href="#title" aria-label={`${monogram}, ${fullName}, back to top`}>
+        <a className="pro-brand" href="#title" aria-label={`${monogram} ${fullName}, back to top`}>
           <span className="pro-brand-mark" aria-hidden="true">
             {monogram}
           </span>
@@ -39,7 +59,10 @@ export default function ProNav({ activeId }) {
         </a>
 
         <nav className="pro-nav-links" aria-label="Sections">
-          <ul>{links()}</ul>
+          <ul ref={listRef}>
+            {links()}
+            <li className="pro-nav-ind" ref={indRef} aria-hidden="true" />
+          </ul>
         </nav>
 
         <div className="pro-nav-tools">

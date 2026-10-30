@@ -1,6 +1,7 @@
-import { AVAILABILITY, profile } from '../data.js';
+import { AVAILABILITY_ITEMS, profile } from '../data.js';
 import { COPY } from '../labels.js';
 import ResumeLink from '../components/ResumeLink.jsx';
+import Words from '../components/Words.jsx';
 
 /** Staggers the entrance (see [data-hero] in pro.css). */
 const step = (i) => ({ '--i': i });
@@ -14,8 +15,9 @@ export default function Hero() {
         <i />
       </div>
       <div className="pro-container pro-hero-inner">
-        <h1 id="pro-hero-title" className="pro-hero-name" data-hero style={step(0)}>
-          <span>{profile.firstName}</span> <span>{profile.lastName}</span>
+        <div className="pro-hero-copy">
+        <h1 id="pro-hero-title" className="pro-hero-name">
+          <Words text={`${profile.firstName} ${profile.lastName}`} />
         </h1>
         <p className="pro-hero-role" data-hero style={step(1)}>
           {profile.roles.join(' · ')}
@@ -23,13 +25,31 @@ export default function Hero() {
         <p className="pro-hero-pitch" data-hero style={step(2)}>
           {profile.pitch}
         </p>
-        <div className="pro-hero-cta" data-hero style={step(3)}>
+        {AVAILABILITY_ITEMS.length > 0 && (
+          <ul className="pro-avail" aria-label="Availability" data-hero style={step(3)}>
+            {AVAILABILITY_ITEMS.map((a, i) => (
+              <li key={a}>
+                {i === 0 && <span className="pro-dot is-live" aria-hidden="true" />}
+                {a}
+              </li>
+            ))}
+          </ul>
+        )}
+        <div className="pro-hero-cta" data-hero style={step(4)}>
           <ResumeLink />
           <a className="pro-btn pro-btn-secondary" href="#contact">
             {COPY.contactCta}
           </a>
         </div>
-        <dl className="pro-hero-facts" data-hero style={step(4)}>
+        </div>
+        {profile.photo && (
+          <figure className="pro-hero-photo" data-hero style={step(2)}>
+            <span className="pro-hero-frame">
+              <img src={profile.photo} alt={profile.photoAlt} width="600" height="600" decoding="async" />
+            </span>
+          </figure>
+        )}
+        <dl className="pro-hero-facts" data-hero style={step(5)}>
           <div>
             <dt>Status</dt>
             <dd>
@@ -37,12 +57,6 @@ export default function Hero() {
               {profile.status}
             </dd>
           </div>
-          {AVAILABILITY && (
-            <div>
-              <dt>Availability</dt>
-              <dd>{AVAILABILITY}</dd>
-            </div>
-          )}
           <div>
             <dt>Education</dt>
             <dd>

@@ -38,6 +38,7 @@
   --pro-accent: #1d4ed8;
   --pro-accent-strong: #1a43b8;
   --pro-accent-ink: #ffffff;
+  --pro-card: var(--pro-surface);
   --pro-danger: #b42318;
   --pro-shadow: 15 23 42; /* rgb triplet for shadows */
 
@@ -45,8 +46,8 @@
   --pro-font-ui: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --pro-font-display: 'Gloock', Georgia, 'Times New Roman', serif;
   --pro-font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
-  --pro-fs-hero: clamp(2.75rem, 1.2rem + 7vw, 6rem);
-  --pro-fs-h2: clamp(2rem, 1.2rem + 3vw, 3.25rem);
+  --pro-fs-hero: clamp(3rem, 1rem + 8vw, 6.75rem);
+  --pro-fs-h2: clamp(2.25rem, 1.1rem + 4.2vw, 4.5rem);
   --pro-fs-h3: 1.25rem;
   --pro-fs-lead: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
   --pro-fs-body: 1rem;
@@ -75,6 +76,7 @@
 
   /* ---------- motion ---------- */
   --pro-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --pro-ease-io: cubic-bezier(0.77, 0, 0.175, 1);
   --pro-ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
   --pro-dur-press: 120ms;
   --pro-dur-fast: 200ms;

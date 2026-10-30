@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { SITE } from '../../config/site.js';
 import { CONTACT_LINKS, EMAIL_RE, FORM_KEY, sendMessage } from '../../lib/contact.js';
 import { COPY, SECTIONS } from '../labels.js';
-import { IconCheck, IconCopy } from '../icons.jsx';
+import { IconCheck, IconCopy, IconMail } from '../icons.jsx';
 import SectionHead from '../components/SectionHead.jsx';
 
 /** Contact: direct links + the same form (and VITE_FORM_KEY transport) as Player One. */
@@ -77,7 +77,7 @@ export default function Contact() {
   );
 
   return (
-    <section id="contact" className="pro-section" aria-labelledby="pro-contact-title">
+    <section id="contact" className="pro-section is-inverse" data-pro-in aria-labelledby="pro-contact-title">
       <div className="pro-container">
         <SectionHead id="pro-contact-title" title={SECTIONS.contact.title} sub={SECTIONS.contact.sub} />
 
@@ -98,10 +98,16 @@ export default function Contact() {
                 );
               })}
             </ul>
-            <button type="button" className="pro-btn pro-btn-secondary" onClick={copyEmail}>
-              {copied ? <IconCheck /> : <IconCopy />}
-              {copied ? COPY.copied : COPY.copyEmail}
-            </button>
+            <div className="pro-contact-actions">
+              <a className="pro-btn pro-btn-primary" href={`mailto:${SITE.email}`}>
+                <IconMail />
+                {COPY.emailMe}
+              </a>
+              <button type="button" className="pro-btn pro-btn-secondary" onClick={copyEmail}>
+                {copied ? <IconCheck /> : <IconCopy />}
+                {copied ? COPY.copied : COPY.copyEmail}
+              </button>
+            </div>
             <span className="sr-only" aria-live="polite">
               {copied ? 'Email address copied' : ''}
             </span>

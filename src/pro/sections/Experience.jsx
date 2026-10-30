@@ -5,7 +5,7 @@ import SectionHead from '../components/SectionHead.jsx';
 /** Experience & education: vertical timeline. Content: src/data/timeline.json */
 export default function Experience() {
   return (
-    <section id="quests" className="pro-section" aria-labelledby="pro-quests-title">
+    <section id="quests" className="pro-section is-band" data-pro-in aria-labelledby="pro-quests-title">
       <div className="pro-container">
         <SectionHead id="pro-quests-title" title={SECTIONS.quests.title} sub={SECTIONS.quests.sub} />
         <div className="pro-timeline">

@@ -13,30 +13,23 @@ const FACTS = [
 /** About: photo, bio, key facts, how I work, and counts derived from the data. */
 export default function About() {
   return (
-    <section id="about" className="pro-section" aria-labelledby="pro-about-title">
+    <section id="about" className="pro-section" data-pro-in aria-labelledby="pro-about-title">
       <div className="pro-container">
         <div className="pro-about">
-          {profile.photo && (
-            <figure className="pro-about-photo" data-pro-reveal>
-              <img src={profile.photo} alt={profile.photoAlt} width="600" height="600" loading="lazy" decoding="async" />
-            </figure>
-          )}
-          <div className="pro-about-copy">
-            <SectionHead id="pro-about-title" title={SECTIONS.about.title} />
-            <div className="pro-prose" data-pro-reveal>
-              {STORY.map((p) => (
-                <p key={p.slice(0, 32)}>{p}</p>
-              ))}
-            </div>
-            <dl className="pro-facts" data-pro-reveal>
-              {FACTS.map(([k, v]) => (
-                <div key={k}>
-                  <dt>{k}</dt>
-                  <dd>{v}</dd>
-                </div>
-              ))}
-            </dl>
+          <SectionHead id="pro-about-title" title={SECTIONS.about.title} />
+          <div className="pro-prose" data-pro-reveal>
+            {STORY.map((p) => (
+              <p key={p.slice(0, 32)}>{p}</p>
+            ))}
           </div>
+          <dl className="pro-facts" data-pro-reveal>
+            {FACTS.map(([k, v]) => (
+              <div key={k}>
+                <dt>{k}</dt>
+                <dd>{v}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
 
         <div className="pro-about-more">

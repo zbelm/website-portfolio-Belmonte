@@ -24,7 +24,7 @@ export const SECTIONS = {
   projects: { title: 'Selected projects', sub: 'Live demos and source code where they are public.' },
   quests: { title: 'Experience & education', sub: 'School, training and personal projects.' },
   skills: { title: 'Technical skills', sub: 'Self-assessed levels. The scale is defined below.' },
-  achievements: { title: 'Certifications', sub: 'Each links to the issuer’s verification page where one exists.' },
+  achievements: { title: 'Certifications' },
   contact: { title: 'Contact', sub: 'Hiring for an OJT or internship? I usually reply within 1–2 days.' },
 };
 
@@ -55,6 +55,7 @@ export const COPY = {
   demoDefault: 'Live demo',
   source: 'Source code',
   verify: 'Verify credential',
+  certsSub: (verified, total) => `${verified} of ${total} link to the issuer’s verification page.`,
   showAllCerts: (n) => `Show all ${n} certifications`,
   showFewerCerts: 'Show fewer',
   noProjects: 'No projects match these filters. Clear a filter to see more.',
@@ -63,6 +64,7 @@ export const COPY = {
   sentAgain: 'Send another message',
   sending: 'Sending…',
   send: 'Send message',
+  emailMe: 'Email me',
   copyEmail: 'Copy email address',
   copied: 'Copied',
 };

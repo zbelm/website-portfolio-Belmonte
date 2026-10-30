@@ -1,25 +1,29 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { CERTS } from '../data.js';
 import { formatMonth } from '../../lib/format.js';
 import { COPY, SECTIONS } from '../labels.js';
 import ExternalLink from '../components/ExternalLink.jsx';
+import { useSpotlight } from '../hooks/useSpotlight.js';
 import SectionHead from '../components/SectionHead.jsx';
 
 const ISSUERS = ['All', ...new Set(CERTS.map((c) => c.issuer))];
 const INITIAL = 9;
+const VERIFIABLE = CERTS.filter((c) => c.verifyUrl).length;
 
 /** Certifications: issuer-filtered grid, newest first. Content: src/data/certifications.json */
 export default function Certifications() {
   const [issuer, setIssuer] = useState('All');
   const [expanded, setExpanded] = useState(false);
+  const gridRef = useRef(null);
+  useSpotlight(gridRef);
 
   const list = useMemo(() => CERTS.filter((c) => issuer === 'All' || c.issuer === issuer), [issuer]);
   const visible = expanded ? list : list.slice(0, INITIAL);
 
   return (
-    <section id="achievements" className="pro-section" aria-labelledby="pro-achievements-title">
+    <section id="achievements" className="pro-section is-band" data-pro-in aria-labelledby="pro-achievements-title">
       <div className="pro-container">
-        <SectionHead id="pro-achievements-title" title={SECTIONS.achievements.title} sub={SECTIONS.achievements.sub} />
+        <SectionHead id="pro-achievements-title" title={SECTIONS.achievements.title} sub={COPY.certsSub(VERIFIABLE, CERTS.length)} />
 
         <div className="pro-chips" role="group" aria-label="Filter by issuer" data-pro-reveal>
           {ISSUERS.map((name) => (
@@ -41,9 +45,12 @@ export default function Certifications() {
           {list.length} certifications shown
         </p>
 
-        <ul className="pro-certs">
+        <ul ref={gridRef} className="pro-certs">
           {visible.map((c) => (
             <li key={`${c.issuer}-${c.name}`} className="pro-cert" data-pro-reveal>
+              <span className="pro-spot-wrap" aria-hidden="true">
+                <span className="pro-spot" />
+              </span>
               <div className="pro-cert-head">
                 <img src={c.badgeImage} alt="" width="40" height="40" loading="lazy" decoding="async" />
                 <p className="pro-cert-issuer">

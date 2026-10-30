@@ -79,6 +79,15 @@ Language: calm, fast, exponential ease-out. Only `transform` and `opacity` anima
 
 Spotlight and card lift need a fine pointer; `will-change` is applied only while a card is hovered. Does not animate: scroll-spy state, filter result swaps, theme toggle, form validation, anything triggered by keyboard shortcuts. `prefers-reduced-motion` (via the `motion-ok` class): no movement, no count-up, no drift, no view-transition animation; opacity-only fades at most; all content is visible and usable without motion.
 
+## Craft details (what makes it feel designed, not templated)
+
+- **One motion language:** type rises from its baseline (words in clipping masks), hairline rules draw in from the left, and only blocks of content fade-rise. The same three moves are used everywhere, so nothing is decoration.
+- **Arrival, not scroll position:** reveals use an IntersectionObserver, so a jump (deep link, End key, mode switch) never leaves content hidden. Anything already on screen or above is simply visible.
+- **Rhythm:** tonal bands (Experience, Certifications), a hairline between every section, and an inverted closing panel for Contact (the page's own palette flipped, in both themes).
+- **Hero:** word-by-word name entrance, dot-grid field that fades from the headline, framed portrait with an offset keyline and a slow scroll drift, availability as three plain pills.
+- **Projects:** 12-column rhythm (featured, then 7/5 and 5/7 rows), website screenshots in a minimal browser frame whose address is the project's own demo host, image zoom + lift + spotlight on hover, press feedback, a drawer with a staggered entrance and previous/next.
+- **Small interactions:** nav indicator slides between links; the mode switch has a sliding thumb; skill steps fill in sequence; timeline dots light when the line reaches them; filter swaps are a 180ms fade only (frequent action).
+
 ## Layout
 
 Hero (id `title`) → About (`about`) → Selected Projects (`projects`) → Experience & Education (`quests`) → Technical Skills (`skills`) → Certifications (`achievements`) → Contact (`contact`). Section ids match Player One's so `#hash` links and scroll position carry across modes. Mobile-first; verified at 360 / 768 / 1024 / 1440px.

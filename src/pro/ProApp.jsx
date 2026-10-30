@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef } from 'react';
 import { SITE } from '../config/site.js';
+import { fullName } from './data.js';
 import { useActiveSection } from '../hooks/useActiveSection.js';
 import { SECTION_IDS } from './labels.js';
 import { usePageMotion } from './hooks/usePageMotion.js';
@@ -54,6 +55,7 @@ export default function ProApp() {
         <Contact />
       </main>
       <footer className="pro-footer">
+        <p className="pro-wordmark" aria-hidden="true" data-text={fullName} />
         <div className="pro-container pro-footer-inner">
           <p>
             © {new Date().getFullYear()} {SITE.name}

@@ -6,6 +6,7 @@ import Drawer from '../components/Drawer.jsx';
 import ExternalLink from '../components/ExternalLink.jsx';
 import ProjectMedia from '../components/ProjectMedia.jsx';
 import SectionHead from '../components/SectionHead.jsx';
+import { IconArrowUpRight } from '../icons.jsx';
 
 /** Live = filled dot; anything else (in development, capstone…) = hollow dot. Never color alone: the status word is always printed. */
 const StatusDot = ({ status }) => <span className={`pro-dot ${status === 'Live' ? 'is-live' : ''}`} aria-hidden="true" />;
@@ -29,11 +30,11 @@ function ProjectLinks({ project, withFallback = false }) {
   );
 }
 
-function ProjectCard({ project, onOpen }) {
+function ProjectCard({ project, span, onOpen }) {
   // a featured project with no real screenshot reads better as a text card than as a big empty panel
   const showMedia = project.hasScreenshot || !project.boss;
   return (
-    <li className={project.boss ? 'is-featured' : ''}>
+    <li className={project.boss ? 'is-featured' : span}>
       <article className="pro-card" data-pro-reveal>
         <span className="pro-spot-wrap" aria-hidden="true">
           <span className="pro-spot" />
@@ -61,6 +62,10 @@ function ProjectCard({ project, onOpen }) {
           </ul>
           <div className="pro-card-links">
             <ProjectLinks project={project} />
+            <span className="pro-card-hint" aria-hidden="true">
+              Details
+              <IconArrowUpRight width={16} height={16} />
+            </span>
           </div>
         </div>
       </article>
@@ -68,12 +73,12 @@ function ProjectCard({ project, onOpen }) {
   );
 }
 
-function ProjectDetail({ project }) {
+function ProjectDetail({ project, prev, next, onStep }) {
   const shots = project.screenshots?.filter((s) => s.src) ?? [];
   const media = shots.length ? shots : project.hasScreenshot ? [{ src: project.thumbnail, alt: project.thumbnailAlt }] : [];
   const video = project.video;
   return (
-    <>
+    <div className="pro-detail">
       {media.length > 0 && (
         <div className="pro-drawer-media" tabIndex={0} role="group" aria-label={`${project.title} images`}>
           {media.map((m) => (
@@ -117,7 +122,19 @@ function ProjectDetail({ project }) {
       <div className="pro-drawer-links">
         <ProjectLinks project={project} withFallback />
       </div>
-    </>
+      {prev && next && (
+        <nav className="pro-drawer-step" aria-label="More projects">
+          <button type="button" onClick={() => onStep(-1)}>
+            <span>Previous</span>
+            <strong>{prev.title}</strong>
+          </button>
+          <button type="button" onClick={() => onStep(1)}>
+            <span>Next</span>
+            <strong>{next.title}</strong>
+          </button>
+        </nav>
+      )}
+    </div>
   );
 }
 
@@ -128,6 +145,8 @@ export default function Projects() {
   const [tech, setTech] = useState(null);
   const [selected, setSelected] = useState(null); // stays set after closing so the drawer keeps its content while it animates out
   const [open, setOpen] = useState(false);
+  const [touched, setTouched] = useState(false); // after the first filter, newly shown cards fade in
+  const [opens, setOpens] = useState(0); // remounts the drawer content so its entrance replays
   useSpotlight(gridRef);
 
   const list = useMemo(
@@ -136,15 +155,26 @@ export default function Projects() {
   );
   const filtered = category !== 'all' || tech;
 
+  // editorial rhythm: after the featured card, rows alternate wide/narrow then narrow/wide
+  let n = -1;
+  const spans = list.map((p) => (p.boss ? null : ['is-wide', 'is-narrow', 'is-narrow', 'is-wide'][++n % 4]));
+
+  const index = selected ? list.findIndex((p) => p.id === selected.id) : -1;
+  const step = (dir) => {
+    if (index < 0 || list.length < 2) return;
+    setSelected(list[(index + dir + list.length) % list.length]);
+    setOpens((o) => o + 1);
+  };
+
   return (
-    <section id="projects" className="pro-section" aria-labelledby="pro-projects-title">
+    <section id="projects" className="pro-section" data-pro-in aria-labelledby="pro-projects-title">
       <div className="pro-container">
         <SectionHead id="pro-projects-title" title={SECTIONS.projects.title} sub={SECTIONS.projects.sub} />
 
         <div className="pro-filters" data-pro-reveal>
           <div className="pro-chips" role="group" aria-label="Filter by type">
             {PROJECT_FILTERS.map((f) => (
-              <button key={f.id} type="button" className="pro-chip" aria-pressed={category === f.id} onClick={() => setCategory(f.id)}>
+              <button key={f.id} type="button" className="pro-chip" aria-pressed={category === f.id} onClick={() => { setCategory(f.id); setTouched(true); }}>
                 {f.label}
                 <span className="pro-chip-count">{f.id === 'all' ? PROJECTS.length : PROJECTS.filter((p) => p.category === f.id).length}</span>
               </button>
@@ -152,7 +182,7 @@ export default function Projects() {
           </div>
           <div className="pro-chips" role="group" aria-label="Filter by technology">
             {TECH_TAGS.map((t) => (
-              <button key={t} type="button" className="pro-chip" aria-pressed={tech === t} onClick={() => setTech(tech === t ? null : t)}>
+              <button key={t} type="button" className="pro-chip" aria-pressed={tech === t} onClick={() => { setTech(tech === t ? null : t); setTouched(true); }}>
                 {t}
               </button>
             ))}
@@ -174,13 +204,15 @@ export default function Projects() {
           {list.length} {list.length === 1 ? 'project' : 'projects'} shown
         </p>
 
-        <ul ref={gridRef} className="pro-cards">
-          {list.map((p) => (
+        <ul ref={gridRef} className={`pro-cards ${touched ? 'is-swapped' : ''}`}>
+          {list.map((p, i) => (
             <ProjectCard
               key={p.id}
               project={p}
+              span={spans[i]}
               onOpen={(project) => {
                 setSelected(project);
+                setOpens((o) => o + 1);
                 setOpen(true);
               }}
             />
@@ -189,8 +221,16 @@ export default function Projects() {
         {list.length === 0 && <p className="pro-empty">{COPY.noProjects}</p>}
       </div>
 
-      <Drawer open={open} onClose={() => setOpen(false)} labelledBy="pro-project-title">
-        {selected && <ProjectDetail project={selected} />}
+      <Drawer open={open} onClose={() => setOpen(false)} labelledBy="pro-project-title" resetKey={opens}>
+        {selected && (
+          <ProjectDetail
+            key={`${selected.id}-${opens}`}
+            project={selected}
+            prev={index >= 0 && list.length > 1 ? list[(index - 1 + list.length) % list.length] : null}
+            next={index >= 0 && list.length > 1 ? list[(index + 1) % list.length] : null}
+            onStep={step}
+          />
+        )}
       </Drawer>
     </section>
   );

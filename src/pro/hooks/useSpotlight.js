@@ -23,7 +23,7 @@ export function useSpotlight(ref) {
       if (spot) spot.style.transform = `translate3d(${x - r.left}px, ${y - r.top}px, 0)`;
     };
     const onMove = (e) => {
-      const card = e.target.closest?.('.pro-card');
+      const card = e.target.closest?.('.pro-card, .pro-cert');
       if (!card) return;
       last = { card, x: e.clientX, y: e.clientY };
       if (!raf) raf = requestAnimationFrame(paint);

@@ -40,3 +40,9 @@ export const IconCopy = icon(
     <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" />
   </>,
 );
+export const IconMail = icon(
+  <>
+    <rect x="3" y="5" width="18" height="14" rx="2" />
+    <path d="m3.5 7 8.5 6 8.5-6" />
+  </>,
+);

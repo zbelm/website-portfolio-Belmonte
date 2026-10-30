@@ -8,7 +8,7 @@ const STEPS = skills.scale.length;
 const Steps = ({ step }) => (
   <span className="pro-steps" aria-hidden="true">
     {Array.from({ length: STEPS }, (_, i) => (
-      <i key={i} className={i < step ? 'is-on' : ''} />
+      <i key={i} className={i < step ? 'is-on' : ''} style={{ '--s': i }} />
     ))}
   </span>
 );
@@ -16,7 +16,7 @@ const Steps = ({ step }) => (
 /** Technical skills grouped by area, with the tier each level maps to. Content: src/data/skills.json */
 export default function Skills() {
   return (
-    <section id="skills" className="pro-section" aria-labelledby="pro-skills-title">
+    <section id="skills" className="pro-section" data-pro-in aria-labelledby="pro-skills-title">
       <div className="pro-container">
         <SectionHead id="pro-skills-title" title={SECTIONS.skills.title} sub={SECTIONS.skills.sub} />
 
