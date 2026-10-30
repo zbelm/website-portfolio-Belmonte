@@ -55,7 +55,6 @@ export const COPY = {
   privateSource: 'Source is private',
   demoDefault: 'Live demo',
   source: 'Source code',
-  details: 'View details',
   verify: 'Verify credential',
   showAllCerts: (n) => `Show all ${n} certifications`,
   showFewerCerts: 'Show fewer',

@@ -29,7 +29,7 @@ export default function ProNav({ activeId }) {
   return (
     <header className="pro-nav">
       <div className="pro-nav-bar pro-container">
-        <a className="pro-brand" href="#title" aria-label={`${fullName}, back to top`}>
+        <a className="pro-brand" href="#title" aria-label={`FZB, ${fullName}, back to top`}>
           <span className="pro-brand-mark" aria-hidden="true">
             FZB
           </span>

@@ -20,21 +20,31 @@ export function usePageMotion(rootRef) {
     const root = rootRef.current;
     if (!root || reducedMotion) return undefined;
     let ctx;
+    let io;
     let alive = true;
     let t;
 
     loadGsap().then(({ gsap, ScrollTrigger }) => {
       if (!alive) return;
       ctx = gsap.context(() => {
-        const fold = window.innerHeight * 0.96;
-        const below = gsap.utils.toArray('[data-pro-reveal]').filter((el) => el.getBoundingClientRect().top > fold);
-        gsap.set(below, { opacity: 0, y: 16 });
-        ScrollTrigger.batch(below, {
-          start: 'top 94%',
-          once: true,
-          onEnter: (els) =>
-            gsap.to(els, { opacity: 1, y: 0, duration: 0.5, ease: EASE, stagger: 0.06, overwrite: true, clearProps: 'opacity,transform' }),
-        });
+        // an IntersectionObserver reports who is already on screen without forcing a layout read
+        const reveals = gsap.utils.toArray('[data-pro-reveal]');
+        io = new IntersectionObserver(
+          (entries) => {
+            io.disconnect();
+            if (!alive) return;
+            const below = entries.filter((e) => !e.isIntersecting && e.boundingClientRect.top > 0).map((e) => e.target);
+            gsap.set(below, { opacity: 0, y: 16 });
+            ScrollTrigger.batch(below, {
+              start: 'top 94%',
+              once: true,
+              onEnter: (els) =>
+                gsap.to(els, { opacity: 1, y: 0, duration: 0.5, ease: EASE, stagger: 0.06, overwrite: true, clearProps: 'opacity,transform' }),
+            });
+          },
+          { rootMargin: '0px 0px -4% 0px' },
+        );
+        reveals.forEach((el) => io.observe(el));
 
         gsap.utils.toArray('[data-count]').forEach((el) => {
           const to = Number(el.dataset.count);
@@ -72,6 +82,7 @@ export function usePageMotion(rootRef) {
     return () => {
       alive = false;
       clearTimeout(t);
+      io?.disconnect();
       ro.disconnect();
       ctx?.revert();
     };

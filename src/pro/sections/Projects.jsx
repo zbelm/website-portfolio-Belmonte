@@ -30,20 +30,23 @@ function ProjectLinks({ project, withFallback = false }) {
 }
 
 function ProjectCard({ project, onOpen }) {
+  // a featured project with no real screenshot reads better as a text card than as a big empty panel
+  const showMedia = project.hasScreenshot || !project.boss;
   return (
     <li className={project.boss ? 'is-featured' : ''}>
       <article className="pro-card" data-pro-reveal>
         <span className="pro-spot-wrap" aria-hidden="true">
           <span className="pro-spot" />
         </span>
-        <div className="pro-card-media">
-          <ProjectMedia project={project} width="640" height="360" loading="lazy" decoding="async" />
-        </div>
+        {showMedia && (
+          <div className="pro-card-media">
+            <ProjectMedia project={project} width="640" height="360" loading="lazy" decoding="async" />
+          </div>
+        )}
         <div className="pro-card-body">
           <h3 className="pro-card-title">
-            <button type="button" className="pro-card-open" onClick={() => onOpen(project)}>
+            <button type="button" className="pro-card-open" aria-haspopup="dialog" onClick={() => onOpen(project)}>
               {project.title}
-              <span className="sr-only">: {COPY.details.toLowerCase()}</span>
             </button>
           </h3>
           <p className="pro-card-meta">

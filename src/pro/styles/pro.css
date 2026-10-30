@@ -320,7 +320,8 @@
   }
 
   @media (pointer: coarse), (max-width: 720px) {
-    .pro-chip {
+    .pro-chip,
+    .mode-switch-opt {
       min-height: 44px;
     }
   }
@@ -353,8 +354,8 @@
   .pro-brand-mark {
     display: grid;
     place-items: center;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border: 1px solid var(--pro-line-strong);
     border-radius: var(--pro-r-md);
     font: 400 0.9rem / 1 var(--pro-font-display);
