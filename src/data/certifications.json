@@ -1,5 +1,29 @@
 [
   {
+    "name": "AWS: Fundamentals of Machine Learning and Artificial Intelligence",
+    "issuer": "Coursera",
+    "date": "2026-10",
+    "credentialId": "",
+    "verifyUrl": "",
+    "badgeImage": "/badges/coursera.svg",
+    "skills": [
+      "Machine Learning",
+      "Artificial Intelligence (AI)",
+      "AWS"
+    ]
+  },
+  {
+    "name": "Building with the Claude API",
+    "issuer": "Anthropic",
+    "date": "2026-10",
+    "credentialId": "rcqpk2f9gh8q",
+    "verifyUrl": "https://verify.skilljar.com/c/rcqpk2f9gh8q",
+    "badgeImage": "/badges/anthropic.svg",
+    "skills": [
+      "Claude API"
+    ]
+  },
+  {
     "name": "Introduction to subagents",
     "issuer": "Anthropic",
     "date": "2026-10",
